@@ -21,7 +21,7 @@
     <script src="https://kit.fontawesome.com/8bc88488c5.js" crossorigin="anonymous"></script>
 
     <style>
-        .profile * {
+        .profile>* {
             height: 27vw;
         }
 
@@ -75,8 +75,9 @@
                         alt="profile" style="height: 27vw;">
                 </div>
             </div>
-            <div class="col-8 border">
-                <div class="align-self-center">포스코 코딩온 10기</div>
+            <div class="col-8 border p-3">
+                <h5><b>aiden2978의 블로그</b></h5>
+                <p>포스코 코딩온 10기</p>
             </div>
         </div>
     </div>
@@ -113,65 +114,68 @@
                         ...
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary closing" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <footer>
+        
+    </footer>
+
+    <script>
+        function nightSwitch() {
+            $('body').toggleClass('bg-dark text-light');
+            $('.moon').toggleClass('text-light');
+            $('.card').toggleClass('bg-dark text-light');
+            $('.modal-dialog *').toggleClass('bg-dark text-light');
+        }
+
+        const article = { title: 'title1', src: 'https://t4.ftcdn.net/jpg/01/43/42/83/360_F_143428338_gcxw3Jcd0tJpkvvb53pfEztwtU9sxsgT.jpg', content: 'localStorage에서 가져옴', num: '1' };
+
+        // localStorage에 배열 형태로 저장된 제목, 사진 url, 내용, 일련번호를 가져옴
+        localStorage.setItem('1', JSON.stringify(article));
+        const articleElement = JSON.parse(localStorage.getItem('1'));
+
+        // value값에 맞는 내용이 담긴 card 추가
+        const container = $('#container');
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.innerHTML = `<img src="${articleElement.src}" class="card-img-top thumbnail" alt="1">
+                <div class="card-body">
+                    <h5 class="card-title">${articleElement.title}</h5>
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modal${articleElement.num}">Read More</button>
+                    </div>
+                </div>`;
+        container.append(card);
+
+        // value 값에 맞는 내용을 볼 수 있는 modal 추가
+        const modal = document.createElement('div');
+        modal.setAttribute('class', 'modal fade');
+        modal.setAttribute('id', `modal${articleElement.num}`);
+        modal.setAttribute('tabindex', '-1');
+        modal.setAttribute('aria-labelledby', `exampleModallabel${articleElement.num}`);
+        modal.setAttribute('aria-hidden', 'true');
+        modal.innerHTML = `<div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel${articleElement.num}">${articleElement.title}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="${articleElement.src}" alt="${articleElement.title}" width="50%" class="d-block mb-2 m-auto" style="aspect-ratio: 4/3;">
+                            ${articleElement.content}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary closing" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>`;
+        container.append(modal);
+    </script>
 </body>
-
-<script>
-    function nightSwitch() {
-        $('body').toggleClass('bg-dark text-light');
-        $('.moon').toggleClass('text-light');
-        $('.card').toggleClass('bg-dark text-light');
-        $('.modal-dialog *').toggleClass('bg-dark text-light');
-    }
-
-    const article = { title: 'title1', src: 'https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg', content: 'localStorage에서 가져옴', num: '1' };
-
-    // localStorage에 배열 형태로 저장된 제목, 사진 url, 내용, 일련번호를 가져옴
-    localStorage.setItem('1', JSON.stringify(article));
-    const articleElement = JSON.parse(localStorage.getItem('1'));
-
-    // value값에 맞는 내용이 담긴 card 추가
-    const container = $('#container');
-    const card = document.createElement('div');
-    card.classList.add('card');
-    card.innerHTML = `<img src="${articleElement.src}" class="card-img-top thumbnail" alt="1">
-            <div class="card-body">
-                <h5 class="card-title">${articleElement.title}</h5>
-                <div class="d-flex justify-content-center">
-                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modal${articleElement.num}">Read More</button>
-                </div>
-            </div>`;
-    container.append(card);
-
-    // value 값에 맞는 내용을 볼 수 있는 modal 추가
-    const modal = document.createElement('div');
-    modal.setAttribute('class', 'modal fade');
-    modal.setAttribute('id', `modal${articleElement.num}`);
-    modal.setAttribute('tabindex', '-1');
-    modal.setAttribute('aria-labelledby', `exampleModallabel${articleElement.num}`);
-    modal.setAttribute('aria-hidden', 'true');
-    modal.innerHTML = `<div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel${articleElement.num}">${articleElement.title}</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <img src="${articleElement.src}" alt="${articleElement.title}" width="50%" class="d-block mb-2 m-auto" style="aspect-ratio: 4/3;">
-                        ${articleElement.content}
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>`;
-    container.append(modal);
-
-</script>
 
 </html>

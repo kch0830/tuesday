@@ -5,102 +5,172 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>app.end</title>
+
+    <!-- bootstrap cdn -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 
+    <!-- jQuery cdn -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- fontawesome cdn -->
+    <script src="https://kit.fontawesome.com/8bc88488c5.js" crossorigin="anonymous"></script>
+
     <style>
         .profile * {
-            height: 25vw;
+            height: 27vw;
         }
 
         .card {
             padding: 15px;
             border: none;
         }
+
+        /* 반응형으로 설정 */
+        @media (max-width: 768px) {
+            .thumbnail {
+                width: 90vw;
+                aspect-ratio: 4/3;
+            }
+        }
+
+        @media (769px <=width <=1200px) {
+            .thumbnail {
+                width: 45vw;
+                aspect-ratio: 4/3;
+            }
+        }
+
+        @media (min-width: 1201px) {
+            .thumbnail {
+                width: 30vw;
+                aspect-ratio: 4/3;
+            }
+        }
     </style>
 </head>
 
 <body class="p-3">
     <header class="m-5 text-center">
-        <h1>app.end</h1>
+        <div class="d-flex justify-content-between">
+            <h1>app.end</h1>
+
+            <!-- Darkmode toggle 버튼 만들기 -->
+            <button type="button" onclick="nightSwitch()" class="border border-0 bg-transparent">
+                <i class="fa-solid fa-moon moon" style="font-size: 2rem;"></i>
+            </button>
+        </div>
     </header>
     <hr>
 
     <div class="profile mb-5">
         <div class="row">
-            <div class="col-3 border position-relative">
+            <div class="col-4 border position-relative">
                 <div class="position-absolute top-50 start-50 translate-middle">
                     <img src="https://t4.ftcdn.net/jpg/00/64/67/27/360_F_64672736_U5kpdGs9keUll8CRQ3p3YaEv2M6qkVY5.jpg"
-                        alt="profile" style="height: 23vw;">
+                        alt="profile" style="height: 27vw;">
                 </div>
             </div>
-            <div class="col-9 border">
+            <div class="col-8 border">
                 <div class="align-self-center">포스코 코딩온 10기</div>
             </div>
         </div>
     </div>
     <hr>
 
-    <h3>글 목록</h3>
+    <div class="d-flex justify-content-between p-3">
+        <h3>글 목록</h3>
+        <a href="#" type="button" class="btn btn-success">새 글 작성</a>
+    </div>
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 m-auto" id="container">
         <div class="card">
-            <img src="https://www.next-t.co.kr/public/uploads/7b7f7e2138e29e598cd0cdf2c85ea08d.jpg" class="card-img-top"
-                alt="...">
+            <img src="https://www.next-t.co.kr/public/uploads/7b7f7e2138e29e598cd0cdf2c85ea08d.jpg"
+                class="card-img-top thumbnail" width="auto" height="auto" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
-                <a href="#" class="btn btn-info">Read More</a>
+                <div class="d-flex justify-content-center">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#modal" class="btn btn-info">Read
+                        More</button>
+                </div>
             </div>
         </div>
 
-        <div class="card">
-            <img src="https://www.next-t.co.kr/public/uploads/7b7f7e2138e29e598cd0cdf2c85ea08d.jpg" class="card-img-top"
-                alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <a href="#" class="btn btn-info">Read More</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://www.next-t.co.kr/public/uploads/7b7f7e2138e29e598cd0cdf2c85ea08d.jpg" class="card-img-top"
-                alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <a href="#" class="btn btn-info">Read More</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://www.next-t.co.kr/public/uploads/7b7f7e2138e29e598cd0cdf2c85ea08d.jpg" class="card-img-top"
-                alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <a href="#" class="btn btn-info">Read More</a>
+        <!-- Modal -->
+        <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src='https://www.next-t.co.kr/public/uploads/7b7f7e2138e29e598cd0cdf2c85ea08d.jpg' alt=""
+                            width="50%" class="d-block mb-2 m-auto" style="aspect-ratio: 4/3;">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </body>
 
 <script>
-    const article = ['title', 'https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg'];
+    function nightSwitch() {
+        $('body').toggleClass('bg-dark text-light');
+        $('.moon').toggleClass('text-light');
+        $('.card').toggleClass('bg-dark text-light');
+        $('.modal-dialog *').toggleClass('bg-dark text-light');
+    }
 
+    const article = { title: 'title1', src: 'https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg', content: 'localStorage에서 가져옴', num: '1' };
+
+    // localStorage에 배열 형태로 저장된 제목, 사진 url, 내용, 일련번호를 가져옴
     localStorage.setItem('1', JSON.stringify(article));
     const articleElement = JSON.parse(localStorage.getItem('1'));
-    console.log(articleElement);
 
-    const container = document.querySelector('#container');
+    // value값에 맞는 내용이 담긴 card 추가
+    const container = $('#container');
     const card = document.createElement('div');
-    card.innerHTML = `<img src="${articleElement[1]}" class="card-img-top" alt="...">
+    card.classList.add('card');
+    card.innerHTML = `<img src="${articleElement.src}" class="card-img-top thumbnail" alt="1">
             <div class="card-body">
-                <h5 class="card-title">${articleElement[0]}</h5>
-                <a href="#" class="btn btn-info">Read More</a>
+                <h5 class="card-title">${articleElement.title}</h5>
+                <div class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modal${articleElement.num}">Read More</button>
+                </div>
             </div>`;
-    console.log(card);
     container.append(card);
 
+    // value 값에 맞는 내용을 볼 수 있는 modal 추가
+    const modal = document.createElement('div');
+    modal.setAttribute('class', 'modal fade');
+    modal.setAttribute('id', `modal${articleElement.num}`);
+    modal.setAttribute('tabindex', '-1');
+    modal.setAttribute('aria-labelledby', `exampleModallabel${articleElement.num}`);
+    modal.setAttribute('aria-hidden', 'true');
+    modal.innerHTML = `<div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel${articleElement.num}">${articleElement.title}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="${articleElement.src}" alt="${articleElement.title}" width="50%" class="d-block mb-2 m-auto" style="aspect-ratio: 4/3;">
+                        ${articleElement.content}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>`;
+    container.append(modal);
 
 </script>
 

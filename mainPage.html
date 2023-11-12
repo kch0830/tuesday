@@ -75,6 +75,11 @@
 
     <!--- ---------------------------------------  -->
     <script>
+      //   로그인 상태가 맞는지 로컬 스토리지에서 확인하기
+      let isLogin = localStorage.getItem("loginSuccess");
+      //   유저 아이디 로컬 스토리지에서 가져오기
+      let userId = localStorage.getItem("ID가 들어있는 변수명");
+
       $(document).ready(function () {
         // .slider-nav flex 하기 위해 div로 감싸기
         $(".slider-nav>button, .slider-nav>div").addClass("nav-box");
@@ -88,6 +93,11 @@
         $("main .showBlogs .slider-nav .nav-container .slick-next").html(
           `<i class="bi bi-caret-right-fill"></i>`
         );
+        // localStorage.setItem("loginSuccess", true);
+        localStorage.removeItem("loginSuccess");
+
+        //   로그인 했는지 확인하고 로그인 상태이면 함수 호출
+        if (isLogin == "true") loggedIn();
       });
 
       //   light, dark mode
@@ -103,12 +113,13 @@
         }
       }
 
-      //   로그인 하면 계정 사진 불러오기
-      let isLogin = localStorage.getItem(loginSuccess);
-      let userId = localStorage.getItem(ID);
-      if (isLogin) {
+      function loggedIn() {
+        // 로그인 상태에서는 로그인 버튼 대신 새글 작성 버튼 생성, 유저 아이디 버튼 추가
+        $(".headerContainer .headerRight .btn-logIn").addClass("hidden");
         $(".headerContainer .headerRight").append(
-          `<div class="accountInfo">${userId}</div>`
+          `<button class="btn-header btn-write" onclick="location.href='새글작성.html'">
+            새 글 작성
+          </button><div class="accountInfo">${userId}</div>`
         );
       }
     </script>
@@ -172,7 +183,7 @@
         height: 25px;
         font-size: 20px;
       }
-      header .headerContainer .headerRight .logIn {
+      header .headerContainer .headerRight .btn-header {
         background-color: inherit; /* 배경색과 동일 */
         border: 1px solid;
         outline: 0;
@@ -272,6 +283,10 @@
         border-radius: 2px;
       }
 
+      .hidden {
+        display: none;
+      }
+
       @media screen and (max-width: 767px) {
         main .showBlogs .slider-nav .nav-container {
           display: none;
@@ -292,11 +307,13 @@
           <button onclick="changeColor()" id="color-mode">
             <i class="bi bi-brightness-high"></i>
           </button>
-          <button class="logIn" onclick="location.href='르인.html'">
+          <button
+            class="btn-header btn-logIn"
+            onclick="location.href='로그인.html'"
+          >
             로그인
           </button>
-          <!-- 로그인하면 계정 정보 추가 -->
-          <!-- <div class="accountInfo">tuesday</div> -->
+          <!-- 로그인하면 계정 아이디 표시-->
         </div>
       </div>
     </header>
@@ -305,7 +322,9 @@
       <div class="showBlogs">
         <!-- 큰 이미지 클릭하면 블로그로 연결될 수 있도록 링크 연결하기 -->
         <div class="slider-for">
-          <div onclick="location.href='sds.html'"><img src="" alt="" />1</div>
+          <div onclick="location.href='블로그1.html'">
+            <img src="" alt="" />1
+          </div>
           <div onclick="location.href='블로그2.html'">
             <img src="" alt="" />2
           </div>
@@ -346,20 +365,17 @@
           <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
             <li class="ms-3">
               <a class="text-body-secondary" href="#"
-                ><svg class="bi" width="24" height="24">
-                  <use xlink:href="#twitter" /></svg
+                ><i class="bi bi-twitter"></i
               ></a>
             </li>
             <li class="ms-3">
               <a class="text-body-secondary" href="#"
-                ><svg class="bi" width="24" height="24">
-                  <use xlink:href="#instagram" /></svg
+                ><i class="bi bi-instagram"></i
               ></a>
             </li>
             <li class="ms-3">
               <a class="text-body-secondary" href="#"
-                ><svg class="bi" width="24" height="24">
-                  <use xlink:href="#facebook" /></svg
+                ><i class="bi bi-facebook"></i
               ></a>
             </li>
           </ul>

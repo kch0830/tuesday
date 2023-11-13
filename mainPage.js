@@ -43,11 +43,11 @@ function loggedIn() {
   $(".headerContainer .headerRight").append(
     `<button class="btn-header btn-write" onclick="location.href='새글작성.html'">
       새 글 작성
-    </button><div class="accountInfo">${userId}</div>`
+    </button><div class="accountInfo" onclick="location.href = '글목록.html'";>${userId}</div>`
   );
 }
 
 function onBlog(user) {
-  location.href = "블로그.html";
+  location.href = "글목록.html";
   localStorage.setItem("userName", "${user}");
 }

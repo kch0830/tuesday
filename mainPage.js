@@ -29,6 +29,7 @@ function changeColor() {
   body.classList.toggle("dark-mode");
 
   let btn = document.getElementById("color-mode");
+
   if (btn.innerHTML == `<i class="bi bi-moon-fill"></i>`) {
     btn.innerHTML = `<i class="bi bi-brightness-high"></i>`;
   } else {
@@ -44,4 +45,9 @@ function loggedIn() {
       새 글 작성
     </button><div class="accountInfo">${userId}</div>`
   );
+}
+
+function onBlog(user) {
+  location.href = "블로그.html";
+  localStorage.setItem("userName", "${user}");
 }

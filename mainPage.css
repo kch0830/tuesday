@@ -16,10 +16,12 @@
   body {
     margin: 0;
   }
+
   .dark-mode {
     background-color: #000000;
     color: white;
   }
+
   .dark-mode button {
     color: white;
     border: 1px solid white;
@@ -95,7 +97,7 @@
     height: 70%;
     margin: 2vh 15vw;
     /* remove */
-    /* border: 1px solid black; */
+    border: 1px solid black;
   }
   main .showBlogs .slider-for .slick-list {
     width: 100%;
@@ -138,7 +140,7 @@
     height: 100%;
     margin: 0 10px;
     /* remove */
-    /* border: 1px solid black; */
+    border: 1px solid black;
   }
   main .showBlogs .slider-nav .slick-dots {
     display: flex;

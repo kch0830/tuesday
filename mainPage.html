@@ -124,6 +124,10 @@
           <button onclick="changeColor()" id="color-mode">
             <i class="bi bi-brightness-high"></i>
           </button>
+          <!-- <input type="checkbox" class="changeMode" />
+          <label class="mode" for="changeMode">
+            <i class="bi bi-brightness-high"></i>
+          </label> -->
           <button
             class="btn-header btn-logIn"
             onclick="location.href='로그인.html'"
@@ -139,18 +143,10 @@
       <div class="showBlogs">
         <!-- 큰 이미지 클릭하면 블로그로 연결될 수 있도록 링크 연결하기 -->
         <div class="slider-for">
-          <div onclick="location.href='블로그1.html'">
-            <img src="" alt="" />1
-          </div>
-          <div onclick="location.href='블로그2.html'">
-            <img src="" alt="" />2
-          </div>
-          <div onclick="location.href='블로그3.html'">
-            <img src="" alt="" />3
-          </div>
-          <div onclick="location.href='블로그4.html'">
-            <img src="" alt="" />4
-          </div>
+          <div onclick="onBlog('1');"><img src="" alt="" />1</div>
+          <div onclick="onBlog('2');"><img src="" alt="" />2</div>
+          <div onclick="onBlog('3');"><img src="" alt="" />3</div>
+          <div onclick="onBlog('4');"><img src="" alt="" />4</div>
         </div>
         <div class="slider-nav">
           <div><img src="" alt="" />1</div>

@@ -1,4 +1,11 @@
 function nightSwitch() {
+    const dark = localStorage.getItem('dark');
+    if (dark === true) {
+        localStorage.setItem('dark', false);
+    } else {
+        localStorage.setItem('dark', true);
+    }
+    console.log(localStorage.getItem('dark'));
     $('*').toggleClass('bg-dark text-light');
 }
 
@@ -7,6 +14,13 @@ function hiddenBtn() {
     const loggedinUser = localStorage.getItem('loggedinUser');
     if (userName != loggedinUser) {
         $('#write').addClass('disabled');
+    }
+}
+
+function isDark() {
+    const dark = localStorage.getItem('dark');
+    if (dark === true) {
+        $('*').addClass('bg-dark text-light');
     }
 }
 

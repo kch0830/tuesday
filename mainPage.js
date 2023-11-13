@@ -16,8 +16,8 @@ $(document).ready(function () {
     $("main .showBlogs .slider-nav .nav-container .slick-next").html(
         `<i class="bi bi-caret-right-fill"></i>`
     );
-    // localStorage.setItem("loginSuccess", true);
-    localStorage.removeItem("loginSuccess");
+    localStorage.setItem("loginSuccess", true);
+    // localStorage.removeItem("loginSuccess");
 
     //   로그인 했는지 확인하고 로그인 상태이면 함수 호출
     if (isLogin == "true") loggedIn();
@@ -39,13 +39,15 @@ function changeColor() {
 
 function loggedIn() {
     // 로그인 상태에서는 로그인 버튼 대신 새글 작성 버튼 생성, 유저 아이디 버튼 추가
+    const loggedinUser = localStorage.getItem('loggedinUser');
+    localStorage.setItem('userName', loggedinUser);
     $(".headerContainer .headerRight .btn-logIn").addClass("hidden");
     $(".headerContainer .headerRight").append(
-        `<button class="btn-header btn-write" onclick="location.href='새글작성.html'">
-      새 글 작성
-    </button><div class="accountInfo">${userId}</div>`
+      `<button class="btn-header btn-write" onclick="location.href='새글작성.html'">
+        새 글 작성
+      </button><div class="accountInfo" onclick="location.href = 'articles.html'";>${userId}</div>`
     );
-}
+  }
 
 function onBlog(user) {
     location.href = 'articles.html';

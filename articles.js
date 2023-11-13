@@ -4,8 +4,8 @@ function nightSwitch() {
 
 function hiddenBtn() {
     const userName = localStorage.getItem('userName');
-    const loggedIn = localStorage.getItem('loggedIn');
-    if (userName != loggedIn) {
+    const loggedinUser = localStorage.getItem('loggedinUser');
+    if (userName != loggedinUser) {
         $('#write').addClass('disabled');
     }
 }

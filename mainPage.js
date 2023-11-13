@@ -45,6 +45,7 @@ function loggedIn() {
       새 글 작성
     </button><div class="accountInfo" onclick="location.href = '글목록.html'";>${userId}</div>`
   );
+  $("main .welcome").text(`${userId}님 환영합니다.`);
 }
 
 function onBlog(user) {

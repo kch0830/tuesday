@@ -2,6 +2,18 @@ function nightSwitch() {
     $('*').toggleClass('bg-dark text-light');
 }
 
+function hiddenBtn() {
+    const userName = localStorage.getItem('userName');
+    const loggedIn = localStorage.getItem('loggedIn');
+    if (userName != loggedIn) {
+        $('#write').addClass('disabled');
+    }
+}
+
+function gotoMain() {
+    location.href = 'mainPage.html';
+}
+
 function profileLoad() {
     const userName = localStorage.getItem('userName');
     const profile = $('#profile');
@@ -31,7 +43,7 @@ function profileLoad() {
                 <h5><b>${profileElement.title}</b></h5>
                 <p>${profileElement.content}</p>
             </div>`;
-            profile.append(profileCard);
+                profile.append(profileCard);
             }
         } catch (error) {
             console.log(error);

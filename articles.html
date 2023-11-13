@@ -26,10 +26,10 @@
     <link rel="stylesheet" href="css.css">
 </head>
 
-<body class="p-3">
-    <header class="m-5 text-center">
+<body>
+    <header class="p-5 text-center">
         <div class="d-flex justify-content-between">
-            <h1>app.end</h1>
+            <h1 onclick="gotoMain()">app.end</h1>
 
             <!-- Darkmode toggle 버튼 만들기 -->
             <button type="button" onclick="nightSwitch()" class="border border-0 bg-transparent">
@@ -45,7 +45,7 @@
 
     <div class="d-flex justify-content-between p-3">
         <h3>글 목록</h3>
-        <a href="#" type="button" class="btn btn-outline-success">새 글 작성</a>
+        <a href="write.html" type="button" class="btn btn-outline-success" id="write">새 글 작성</a>
     </div>
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 m-auto" id="container">
     </div>
@@ -56,11 +56,13 @@
     </footer>
 
     <script>
-        localStorage.setItem('userName', 'author1');
+        // localStorage.setItem('userName', 'author1');
+        localStorage.setItem('loggedIn', 'author2');
 
         $(document).ready(function () {
             cardLoad();
             profileLoad();
+            hiddenBtn();
         })
     </script>
 </body>

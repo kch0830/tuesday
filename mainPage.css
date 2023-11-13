@@ -1,0 +1,192 @@
+@font-face {
+    font-family: "intelone-mono-font-family-regular";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "EASTARJET-Medium";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/EASTARJET-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+}
+
+.dark-mode {
+    background-color: #000000;
+    color: white;
+}
+
+.dark-mode button {
+    color: white;
+    border: 1px solid white;
+}
+
+header .headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 12px 70px;
+    /* remove */
+    /* border: 1px solid black; */
+}
+
+header .headerContainer .headerTitle {
+    height: 100%;
+    font-size: 25px;
+    font-family: "intelone-mono-font-family-regular";
+    line-height: 25px;
+    font-weight: 600;
+}
+
+header .headerContainer .headerRight {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+header .headerContainer .headerRight #color-mode {
+    line-height: 25px;
+    text-align: center;
+    background-color: inherit;
+    padding: 0;
+    border: 0;
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+}
+
+header .headerContainer .headerRight .btn-header {
+    background-color: inherit;
+    /* 배경색과 동일 */
+    border: 1px solid;
+    outline: 0;
+    width: 90px;
+    height: 33px;
+    border-radius: 20px;
+    font-size: 15px;
+    margin: 0 1vw;
+}
+
+header .headerContainer .headerRight .accountInfo {
+    padding: 5px;
+    font-size: 17px;
+    /* remove */
+    /* border: 1px solid black; */
+}
+
+main .welcome {
+    height: 150px;
+    text-align: center;
+    line-height: 150px;
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+    font-family: "EASTARJET-Medium";
+    background-color: #1ec996ab;
+    /* 변경 */
+    /* remove */
+    /* border: 1px solid black; */
+}
+
+main .showBlogs {
+    padding: 10px;
+    height: 60vh;
+    /* remove */
+    /* border: 1px solid black; */
+}
+
+main .showBlogs .slider-for {
+    height: 70%;
+    margin: 2vh 15vw;
+    /* remove */
+    border: 1px solid black;
+}
+
+main .showBlogs .slider-for .slick-list {
+    width: 100%;
+    height: 100%;
+}
+
+main .showBlogs .slider-for .slick-list .slick-track {
+    width: 100%;
+    height: 100%;
+}
+
+main .showBlogs .slider-for .slick-list .slick-track div {
+    width: 100%;
+    height: 100%;
+}
+
+main .showBlogs .slider-nav {
+    width: 100%;
+    height: 30%;
+    padding: 0 10vw;
+}
+
+main .showBlogs .slider-nav .nav-container {
+    align-items: center;
+    height: 50%;
+    display: flex;
+    padding: 0;
+}
+
+main .showBlogs .slider-nav .nav-container button {
+    border: 0;
+    outline: 0;
+    background-color: inherit;
+    font-size: 20px;
+}
+
+main .showBlogs .slider-nav .nav-container .slick-list {
+    width: 100%;
+    height: 100%;
+}
+
+main .showBlogs .slider-nav .nav-container .slick-list .slick-track {
+    height: 100%;
+}
+
+main .showBlogs .slider-nav .nav-container .slick-list .slick-slide {
+    height: 100%;
+    margin: 0 10px;
+    /* remove */
+    border: 1px solid black;
+}
+
+main .showBlogs .slider-nav .slick-dots {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+main .showBlogs .slider-nav .slick-dots li button {
+    margin: 0 1vw;
+    background-color: rgba(1, 1, 1, 0.2);
+    border: 0;
+    outline: none;
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    main .showBlogs .slider-nav .nav-container {
+        display: none;
+    }
+}
+
+@media screen and (max-height: 500px) {
+    main .showBlogs .slider-nav .nav-container {
+        display: none;
+    }
+}

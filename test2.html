@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="holder"></div>
+    <p id="status" style="display: none"></p>
+    <p><input type="file" /></p>
+    <script>
+      let upload = document.getElementsByTagName('input')[0],
+        holder = document.getElementById('holder'),
+        state = document.getElementById('status');
+
+      if (typeof window.FileReader === 'undefined') {
+        state.className = 'fail';
+      }
+
+      upload.onchange = function (e) {
+        e.preventDefault();
+
+        let file = upload.files[0],
+          reader = new FileReader();
+        reader.onload = function (event) {
+          let img = new Image();
+          img.src = event.target.result;
+          /*img.style.height = '160px';*/
+          img.style.width = '900px';
+          img.style.height = 'auto';
+          holder.innerHTML = '';
+          holder.appendChild(img);
+        };
+
+        reader.readAsDataURL(file);
+        return false;
+      };
+    </script>
+  </body>
+</html>

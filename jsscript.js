@@ -1,3 +1,7 @@
+function nightSwitch() {
+    $('*').toggleClass('bg-dark text-light');
+}
+
 function profileLoad() {
     const userName = localStorage.getItem('userName');
     const profile = $('#profile');
@@ -56,7 +60,7 @@ function cardLoad() {
     <div class="card-body">
         <h5 class="card-title">${articleElement.title}</h5>
         <div class="d-flex justify-content-center">
-            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modal${articleElement.num}">Read More</button>
+            <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modal${articleElement.num}">Read More</button>
         </div>
     </div>`;
 
@@ -89,8 +93,4 @@ function cardLoad() {
             console.log(error);
         }
     }
-}
-
-function nightSwitch() {
-    $('body, .moon, .card, .modal-dialog *').toggleClass('bg-dark text-light');
 }

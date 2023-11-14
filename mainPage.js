@@ -23,7 +23,14 @@ $(document).ready(function () {
 
 function welcomeLoggedin() {
     const loggedinUser = localStorage.getItem('loggedinUser');
-  $("main .welcome").text(`${loggedinUser}님 환영합니다.`);
-  }
+    $("main .welcome").text(`${loggedinUser}님 환영합니다.`);
+}
+
+function onBlog(user) {
+    localStorage.setItem("userName", `${user}`);
+    location.href = "articles.html";
+    
+}
+
 
 

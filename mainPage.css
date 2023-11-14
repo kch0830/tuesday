@@ -172,3 +172,7 @@
       display: none;
     }
   }
+
+.headerTitle:hover {
+  cursor: pointer;
+}

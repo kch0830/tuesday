@@ -1,29 +1,3 @@
-function nightSwitch() {
-    const dark = localStorage.getItem('dark');
-    if (dark === true) {
-        localStorage.setItem('dark', false);
-    } else {
-        localStorage.setItem('dark', true);
-    }
-    console.log(localStorage.getItem('dark'));
-    $('*').toggleClass('bg-dark text-light');
-}
-
-function hiddenBtn() {
-    const userName = localStorage.getItem('userName');
-    const loggedinUser = localStorage.getItem('loggedinUser');
-    if (userName != loggedinUser) {
-        $('#write').attr('style', 'visibility: hidden;');
-    }
-}
-
-function isDark() {
-    const dark = localStorage.getItem('dark');
-    if (dark === true) {
-        $('*').addClass('bg-dark text-light');
-    }
-}
-
 function gotoMain() {
     location.href = 'mainPage.html';
 }
@@ -82,7 +56,7 @@ function cardLoad() {
             if (articleElement && articleElement.author == userName) {
                 const card = document.createElement('div');
                 card.classList.add('card');
-                card.setAttribute('style', 'background-color: inherit; color: inherit');
+                card.setAttribute('style', 'background-color: inherit; color: inherit; border: none');
                 card.innerHTML = `<img src="${articleElement.src}" class="card-img-top thumbnail" alt="1">
     <div class="card-body">
         <h5 class="card-title">${articleElement.title}</h5>

@@ -23,18 +23,35 @@ $(document).ready(function () {
     if (isLogin == "true") loggedIn();
 });
 
-//   light, dark mode
-function changeColor() {
-    let body = document.body;
-    body.classList.toggle("dark-mode");
+// 페이지 로드 시 다크 모드 값을 확인하고 설정
+window.onload = function () {
+  let darkMode = localStorage.getItem("darkMode");
+
+  // darkMode가 저장되어 있다면 설정을 반영
+  if (darkMode === "dark") {
+    document.body.classList.add("dark-mode");
 
     let btn = document.getElementById("color-mode");
+    btn.innerHTML = `<i class="bi bi-moon-fill"></i>`;
+  }
+};
 
-    if (btn.innerHTML == `<i class="bi bi-moon-fill"></i>`) {
-        btn.innerHTML = `<i class="bi bi-brightness-high"></i>`;
-    } else {
-        btn.innerHTML = `<i class="bi bi-moon-fill"></i>`;
-    }
+// 다크 모드 토글 함수
+function changeColor() {
+  let body = document.body;
+  body.classList.toggle("dark-mode");
+
+  let btn = document.getElementById("color-mode");
+
+  if (body.classList.contains("dark-mode")) {
+    // dark-mode가 활성화된 경우 로컬 스토리지에 저장
+    localStorage.setItem("darkMode", "dark");
+    btn.innerHTML = `<i class="bi bi-moon-fill"></i>`;
+  } else {
+    // dark-mode가 비활성화된 경우 로컬 스토리지에서 제거
+    localStorage.setItem("darkMode", null);
+    btn.innerHTML = `<i class="bi bi-brightness-high"></i>`;
+  }
 }
 
 function loggedIn() {
@@ -47,6 +64,7 @@ function loggedIn() {
         새 글 작성
       </button><div class="accountInfo" onclick="location.href = 'articles.html'";>${userId}</div>`
     );
+  $("main .welcome").text(`${userId}님 환영합니다.`);
   }
 
 function onBlog(user) {

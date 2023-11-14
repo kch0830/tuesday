@@ -20,4 +20,6 @@ localStorage - articleElement
 localStorage - userName
 {
     userName: 보고자 하는 블로그의 작성자
+    loggedinUser: 현재 로그인한 사용자
+    loginSuccess: 로그인 유무
 }

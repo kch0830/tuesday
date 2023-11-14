@@ -22,7 +22,7 @@
     </header>
     <section id="editorContainer">
       <div class="editorInner">
-        <div>
+        <div id="title">
           <input
             class="title"
             type="text"
@@ -31,55 +31,53 @@
           />
         </div>
         <div id="toolBox">
-          <button class="bold">
+          <!-- 폰트 포맷 -->
+          <button id="bold" class="option-button format">
             <i class="fas fa-bold"></i>
           </button>
-          <button class="italic">
+          <button id="italic" class="option-button format">
             <i class="fas fa-italic"></i>
           </button>
-          <button class="underLine">
+          <button id="underLine" class="option-button format">
             <i class="fas fa-underline"></i>
           </button>
-          <button class="left">
+          <button id="strikethrough" class="option-button format">
+            <i class="fas fa-strikethrough"></i>
+          </button>
+
+          <!-- 정렬 -->
+          <button id="justifyLeft" class="option-button align">
             <i class="fas fa-align-left"></i>
           </button>
-          <button class="center">
+          <button id="justifyCenter" class="option-button align">
             <i class="fas fa-align-center"></i>
           </button>
-          <button class="right">
+          <button id="justifyRight" class="option-button align">
             <i class="fas fa-align-right"></i>
           </button>
-          <button class="full">
-            <i class="fas fa-align-justify"></i>
-          </button>
-          <button class="img">
-            <label class="file" for="imageInput" style="cursor: pointer">
-              <i class="fas fa-image"></i>
-            </label>
+          <div class="input-wrapper">
+            <input type="color" id="foreColor" class="adv-option-button" />
+            <label for="foreColor">Font Color</label>
+          </div>
+          <div class="input-wrapper">
+            <input type="color" id="backColor" class="adv-option-button" />
+            <label for="backColor">Highlight Color</label>
+          </div>
+          <div id="img">
+            <label class="file" for="imageInput">업로드</label>
             <input type="file" id="imageInput" multiple accept="image/*" />
-          </button>
+          </div>
         </div>
         <div id="imagePreviewContainer">
-          <div class="imgItem" id="imgItem0">
-            <!-- <img id="imgPreview0" /> -->
-            <button class="deleteButton" onclick="deleteImage()">Delete</button>
-          </div>
-          <div class="imgItem" id="imgItem1">
-            <!-- <img id="imgPreview1" /> -->
-            <button class="deleteButton" onclick="deleteImage()">Delete</button>
-          </div>
-          <div class="imgItem" id="imgItem2">
-            <!-- <img id="imgPreview2" /> -->
-            <button class="deleteButton" onclick="deleteImage()">Delete</button>
-          </div>
-          <div class="imgItem" id="imgItem3">
-            <!-- <img id="imgPreview3" /> -->
-            <button class="deleteButton" onclick="deleteImage()">Delete</button>
-          </div>
+          <div class="imgItem" id="imgItem0"></div>
+          <div class="imgItem" id="imgItem1"></div>
+          <div class="imgItem" id="imgItem2"></div>
+          <div class="imgItem" id="imgItem3"></div>
         </div>
-        <div>
+        <!-- <div>
           <textarea id="editor" name="editor" cols="30" rows="5"></textarea>
-        </div>
+        </div> -->
+        <div id="text-input" contenteditable="true"></div>
       </div>
     </section>
     <footer>

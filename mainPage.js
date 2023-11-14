@@ -60,7 +60,7 @@ function loggedIn() {
     localStorage.setItem('userName', loggedinUser);
     $(".headerContainer .headerRight .btn-logIn").addClass("hidden");
     $(".headerContainer .headerRight").append(
-      `<button class="btn-header btn-write" onclick="location.href='새글작성.html'">
+      `<button class="btn-header btn-write" onclick="location.href='write.html'">
         새 글 작성
       </button><div class="accountInfo" onclick="location.href = 'articles.html'";>${loggedinUser}</div>`
     );

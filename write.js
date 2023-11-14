@@ -84,15 +84,22 @@ const pubBtn = document.querySelector('.btnPublish');
 pubBtn.addEventListener('click', function () {
   const title = document.querySelector('.title');
   const content = document.querySelector('#editor');
+  const author = localStorage.getItem('loggedinUser');
+  const src = 'https://cdn.crowdpic.net/list-thumb/thumb_l_5D3A1045CAB6DC7FBB3F1112BAF466D4.jpeg';
+  const num = Date.now();
 
-  let titleVal = title.value;
-  let conVal = content.value;
+  const articleElement = {'title': title.value, 'content': content.value, 'author': author, 'src': src, 'num': num};
+  localStorage.setItem(`key${num}`, JSON.stringify(articleElement));
 
-  // console.log(titleVal);
-  // console.log(conVal);
 
-  localStorage.setItem('title', titleVal);
-  localStorage.setItem('content', conVal);
+  // let titleVal = title.value;
+  // let conVal = content.value;
+
+  // // console.log(titleVal);
+  // // console.log(conVal);
+
+  // localStorage.setItem('title', titleVal);
+  // localStorage.setItem('content', conVal);
 
   // 클릭하면 사진이 로컬스토리지에 저장되어야 함...
 });

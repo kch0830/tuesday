@@ -82,6 +82,7 @@ function cardLoad() {
             if (articleElement && articleElement.author == userName) {
                 const card = document.createElement('div');
                 card.classList.add('card');
+                card.setAttribute('style', 'background-color: inherit; color: inherit');
                 card.innerHTML = `<img src="${articleElement.src}" class="card-img-top thumbnail" alt="1">
     <div class="card-body">
         <h5 class="card-title">${articleElement.title}</h5>
@@ -97,6 +98,7 @@ function cardLoad() {
                 modal.setAttribute('tabindex', '-1');
                 modal.setAttribute('aria-labelledby', `exampleModallabel${articleElement.num}`);
                 modal.setAttribute('aria-hidden', 'true');
+                modal.setAttribute('style', 'color: inherit');
                 modal.innerHTML = `<div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">

@@ -158,13 +158,13 @@ header {
   outline: none;
 }
 
-footer {
+.save {
   width: 100%;
   height: 70px;
   position: fixed;
   bottom: 0;
   z-index: 1;
-  border-top: 1px solid rgb(73, 80, 87);
+  /* border-top: 1px solid rgb(73, 80, 87); */
 }
 
 #copy {

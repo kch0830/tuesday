@@ -1,85 +1,91 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
-    />
-    <link rel="stylesheet" href="/write.css" />
-    <script
-      src="https://kit.fontawesome.com/a1edb119b5.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>app.end</title>
-  </head>
-  <body>
-    <header>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" />
+  <link rel="stylesheet" href="/write.css" />
+  <script src="https://kit.fontawesome.com/a1edb119b5.js" crossorigin="anonymous"></script>
+
+  <!-- jQuery cdn -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <title>app.end</title>
+</head>
+
+<body>
+  <div id="header"></div>
+  <!-- <header>
       <div id="wirteHead">
         <h1 class="logo">app.end</h1>
       </div>
-    </header>
-    <section id="editorContainer">
-      <div class="editorInner">
-        <div id="title">
-          <input
-            class="title"
-            type="text"
-            name="title"
-            placeholder="제목을 입력하세요"
-          />
-        </div>
-        <div id="toolBox">
-          <!-- 폰트 포맷 -->
-          <button id="bold" class="option-button format">
-            <i class="fas fa-bold"></i>
-          </button>
-          <button id="italic" class="option-button format">
-            <i class="fas fa-italic"></i>
-          </button>
-          <button id="underLine" class="option-button format">
-            <i class="fas fa-underline"></i>
-          </button>
-          <button id="strikethrough" class="option-button format">
-            <i class="fas fa-strikethrough"></i>
-          </button>
-
-          <!-- 정렬 -->
-          <button id="justifyLeft" class="option-button align">
-            <i class="fas fa-align-left"></i>
-          </button>
-          <button id="justifyCenter" class="option-button align">
-            <i class="fas fa-align-center"></i>
-          </button>
-          <button id="justifyRight" class="option-button align">
-            <i class="fas fa-align-right"></i>
-          </button>
-          <div id="img">
-            <label class="file" for="imageInput">업로드</label>
-            <input type="file" id="imageInput" multiple accept="image/*" />
-          </div>
-        </div>
-        <div id="imagePreviewContainer">
-          <div class="imgItem" id="imgItem0"></div>
-          <div class="imgItem" id="imgItem1"></div>
-          <div class="imgItem" id="imgItem2"></div>
-          <div class="imgItem" id="imgItem3"></div>
-        </div>
-        <div contenteditable="true">
-          <textarea id="editor" name="editor" cols="30" rows="5"></textarea>
-        </div>
+    </header> -->
+  <section id="editorContainer">
+    <div class="editorInner">
+      <div id="title">
+        <input class="title" type="text" name="title" placeholder="제목을 입력하세요" />
       </div>
-    </section>
-    <footer>
-      <div id="copy">copyright@tuseday</div>
-      <div id="fooBtn">
-        <button class="btnSave" type="submit" name="btnSave">임시저장</button>
-        <button class="btnPublish" type="submit" name="btnPublish" onclick="location.href='articles.html'">
-          발행하기
+      <div id="toolBox">
+        <!-- 폰트 포맷 -->
+        <button id="bold" class="option-button format">
+          <i class="fas fa-bold"></i>
         </button>
+        <button id="italic" class="option-button format">
+          <i class="fas fa-italic"></i>
+        </button>
+        <button id="underLine" class="option-button format">
+          <i class="fas fa-underline"></i>
+        </button>
+        <button id="strikethrough" class="option-button format">
+          <i class="fas fa-strikethrough"></i>
+        </button>
+
+        <!-- 정렬 -->
+        <button id="justifyLeft" class="option-button align">
+          <i class="fas fa-align-left"></i>
+        </button>
+        <button id="justifyCenter" class="option-button align">
+          <i class="fas fa-align-center"></i>
+        </button>
+        <button id="justifyRight" class="option-button align">
+          <i class="fas fa-align-right"></i>
+        </button>
+        <div id="img">
+          <label class="file" for="imageInput">업로드</label>
+          <input type="file" id="imageInput" multiple accept="image/*" />
+        </div>
       </div>
-    </footer>
-    <script src="/write.js"></script>
-  </body>
+      <div id="imagePreviewContainer">
+        <div class="imgItem" id="imgItem0"></div>
+        <div class="imgItem" id="imgItem1"></div>
+        <div class="imgItem" id="imgItem2"></div>
+        <div class="imgItem" id="imgItem3"></div>
+      </div>
+      <div contenteditable="true">
+        <textarea id="editor" name="editor" cols="30" rows="5"></textarea>
+      </div>
+    </div>
+  </section>
+  <div class="save">
+    <!-- <div id="copy">copyright@tuseday</div> -->
+    <div id="fooBtn">
+      <button class="btnSave" type="submit" name="btnSave">임시저장</button>
+      <button class="btnPublish" type="submit" name="btnPublish" onclick="location.href='articles.html'">
+        발행하기
+      </button>
+    </div>
+  </div>
+  <!-- <div id="footer"></div> -->
+  <script src="/write.js"></script>
+
+  <script>
+    $(function () {
+      $('#header').load('header.html');
+      $('#footer').load("footer.html");
+
+    })
+  </script>
+</body>
+
 </html>

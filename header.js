@@ -56,7 +56,7 @@ function loggedIn() {
   $(".headerContainer .headerRight").append(
     `<button class="btn-header btn-write" onclick="myAppend()">
         새 글 작성
-      </button><div class="accountInfo" onclick="myBlog()">${loggedinUser}</div><button class="btn-header btn-logOut" onclick="logOut()";>
+      </button><div class="accountInfo" onclick="myBlog()">${loggedinUser}</div><button class="btn-header btn-logOut" onclick="location.href='mainPage.html'; logOut()";>
       로그아웃
     </button>`
   );

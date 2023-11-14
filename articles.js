@@ -13,7 +13,7 @@ function hiddenBtn() {
     const userName = localStorage.getItem('userName');
     const loggedinUser = localStorage.getItem('loggedinUser');
     if (userName != loggedinUser) {
-        $('#write').addClass('disabled');
+        $('#write').attr('style', 'visibility: hidden;');
     }
 }
 

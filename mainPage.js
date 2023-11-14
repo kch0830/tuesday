@@ -16,7 +16,7 @@ $(document).ready(function () {
     $("main .showBlogs .slider-nav .nav-container .slick-next").html(
         `<i class="bi bi-caret-right-fill"></i>`
     );
-    localStorage.setItem("loginSuccess", true);
+    // localStorage.setItem("loginSuccess", false);
     // localStorage.removeItem("loginSuccess");
 
     //   로그인 했는지 확인하고 로그인 상태이면 함수 호출
@@ -62,9 +62,9 @@ function loggedIn() {
     $(".headerContainer .headerRight").append(
       `<button class="btn-header btn-write" onclick="location.href='새글작성.html'">
         새 글 작성
-      </button><div class="accountInfo" onclick="location.href = 'articles.html'";>${userId}</div>`
+      </button><div class="accountInfo" onclick="location.href = 'articles.html'";>${loggedinUser}</div>`
     );
-  $("main .welcome").text(`${userId}님 환영합니다.`);
+  $("main .welcome").text(`${loggedinUser}님 환영합니다.`);
   }
 
 function onBlog(user) {

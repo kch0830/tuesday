@@ -95,7 +95,7 @@
         const loginPw = document.getElementById('LOGIN_PW');
         const loginBtn = document.getElementById('LOGIN_BTN');
 
-        const VALID_LOGIN_IDS= ['aaaa', 'bbbb', 'cccc', 'dddd'];
+        const VALID_LOGIN_IDS= ['aaaa', 'bbbb', 'cccc', 'dddd', 'author1'];
         const LOGIN_PW = '1234';
 
         const performLogin = () => {
@@ -103,11 +103,12 @@
                 console.log(`id: ${loginId.value}, pw: ${loginPw.value}`);
                 if (VALID_LOGIN_IDS.includes(loginId.value)) {
                     if (loginPw.value === LOGIN_PW) {
-                        localStorage.setItem('loggedIn', loginId.value);
+                        localStorage.setItem('loggedinUser', loginId.value);
                         loginId.value = '';
                         loginPw.value = '';
 
-                        link = 'https://www.google.co.kr'; // 링크
+                        link = 'mainPage.html'; // 링크
+                        localStorage.setItem('loginSuccess', true);
                         location.href = link;
                     } else {
                         loginPw.value = ''

@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <link rel="stylesheet" href="mainPage.css">
-    
+    <link rel="stylesheet" href="mainPage.css" />
 
     <!-- icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
 
     <!-- bootstrap cdn -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -27,45 +28,50 @@
     <!-- fontawesome cdn -->
     <script src="https://kit.fontawesome.com/8bc88488c5.js" crossorigin="anonymous"></script>
         
-    <script src="header.js"></script>
-</head>
 
-<body>
+    <script src="header.js"></script>
+  </head>
+
+  <body>
     <header>
-        <div class="headerContainer">
-            <div class="headerTitle" onclick="location.href='mainPage.html'">app.end</div>
-            <div class="headerRight">
-                <button onclick="changeColor()" id="color-mode">
-                    <i class="bi bi-brightness-high"></i>
-                </button>
-                <!-- <input type="checkbox" class="changeMode" />
+      <div class="headerContainer">
+        <div class="headerTitle" onclick="location.href='mainPage.html'">
+          app.end
+        </div>
+        <div class="headerRight">
+          <button onclick="changeColor()" id="color-mode">
+            <i class="bi bi-brightness-high"></i>
+          </button>
+          <!-- <input type="checkbox" class="changeMode" />
               <label class="mode" for="changeMode">
                 <i class="bi bi-brightness-high"></i>
               </label> -->
-                <button class="btn-header btn-logIn" onclick="location.href='login01.html'">
-                    로그인
-                </button>
-                <!-- 로그인하면 계정 아이디 표시-->
-            </div>
+          <button
+            class="btn-header btn-logIn"
+            onclick="location.href='login01.html'"
+          >
+            로그인
+          </button>
+          <!-- 로그인하면 계정 아이디 표시-->
         </div>
+      </div>
     </header>
-    
+
     <script>
-        // 페이지 로드 시 다크 모드 값을 확인하고 설정
-// window.onload = function () {
-//     console.log('onload')
-//     let darkMode = localStorage.getItem("darkMode");
+      // 페이지 로드 시 다크 모드 값을 확인하고 설정
+      // window.onload = function () {
+      //     console.log('onload')
+      //     let darkMode = localStorage.getItem("darkMode");
 
-//     // darkMode가 저장되어 있다면 설정을 반영
-//     if (darkMode === "dark") {
-//         document.body.classList.add("dark-mode");
+      //     // darkMode가 저장되어 있다면 설정을 반영
+      //     if (darkMode === "dark") {
+      //         document.body.classList.add("dark-mode");
 
-//         let btn = document.querySelector("#color-mode");
-//         console.log(btn);
-//         btn.innerHTML = `<i class="bi bi-moon-fill"></i>`;
-//     }
-// };
+      //         let btn = document.querySelector("#color-mode");
+      //         console.log(btn);
+      //         btn.innerHTML = `<i class="bi bi-moon-fill"></i>`;
+      //     }
+      // };
     </script>
-</body>
-
+  </body>
 </html>

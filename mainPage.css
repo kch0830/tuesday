@@ -24,7 +24,8 @@
 
   .dark-mode button {
     color: white;
-    border: 1px solid white;
+    background-color: white;
+    /* border: 1px solid white; */
   }
 
   header .headerContainer {
@@ -36,6 +37,15 @@
     /* remove */
     /* border: 1px solid black; */
   }
+  header .headerContainer button:hover {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+    0 2px 4px rgba(0,0,0,0.07), 
+    0 4px 8px rgba(0,0,0,0.07), 
+    0 8px 16px rgba(0,0,0,0.07),
+    0 16px 32px rgba(0,0,0,0.07), 
+    0 32px 64px rgba(0,0,0,0.07);
+  }
+
   header .headerContainer .headerTitle {
     height: 100%;
     font-size: 25px;
@@ -49,15 +59,34 @@
     height: 100%;
   }
   header .headerContainer .headerRight #color-mode {
-    line-height: 25px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: inherit;
-    padding: 0;
+    padding: 5px;
     border: 0;
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
     font-size: 20px;
   }
+
+  .colorModeAni {
+    animation: rotateColorMode 2s;
+  }
+
+  @keyframes rotateColorMode {
+    0% {
+      transform: rotate(0);
+    }
+    50% {
+      transform: rotate(45deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+  
   header .headerContainer .headerRight .btn-header {
     background-color: inherit; /* 배경색과 동일 */
     border: 1px solid;
@@ -71,6 +100,7 @@
   header .headerContainer .headerRight .accountInfo {
     padding: 5px;
     font-size: 17px;
+    cursor: pointer;
     /* remove */
     /* border: 1px solid black; */
   }

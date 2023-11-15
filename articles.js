@@ -57,11 +57,11 @@ function cardLoad() {
                 const card = document.createElement('div');
                 card.classList.add('card');
                 card.setAttribute('style', 'background-color: inherit; color: inherit; border: none');
-                card.innerHTML = `<img src="${articleElement.src}" class="card-img-top thumbnail" alt="1">
+                card.innerHTML = `<img src="${articleElement.src1}" class="card-img-top thumbnail" alt="1">
     <div class="card-body">
         <h5 class="card-title">${articleElement.title}</h5>
         <div class="d-flex justify-content-center">
-            <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modal${articleElement.num}">Read More</button>
+            <button type="button" class="btn btn-outline-success read-more" data-bs-toggle="modal" data-bs-target="#modal${articleElement.num}">Read More</button>
         </div>
     </div>`;
 
@@ -80,7 +80,21 @@ function cardLoad() {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img src="${articleElement.src}" alt="${articleElement.title}" width="50%" class="d-block mb-2 m-auto" style="aspect-ratio: 4/3;">
+                <div class="picture border">
+                    <div class="pictureBoard">
+                        <img src="${articleElement.src1}" alt="${articleElement.title}" class="d-block mb-2 m-auto" style="aspect-ratio: 4/3;">
+                        </div>
+                        <div class="pictureBoard">
+                        <img src="${articleElement.src2}" alt="${articleElement.title}" class="d-block mb-2 m-auto" style="aspect-ratio: 4/3;">
+                        </div>
+                        <div class="pictureBoard">
+                        <img src="${articleElement.src3}" alt="${articleElement.title}" class="d-block mb-2 m-auto" style="aspect-ratio: 4/3;">
+                        </div>
+                        <div class="pictureBoard">
+                        <img src="${articleElement.src4}" alt="${articleElement.title}" class="d-block mb-2 m-auto" style="aspect-ratio: 4/3;">s
+                        </div>
+                    </div>
+                    <br>
                     ${articleElement.content}
                 </div>
                 <div class="modal-footer">

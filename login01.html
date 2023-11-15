@@ -26,6 +26,20 @@
       crossorigin="anonymous"
     ></script>
     <style>
+      @font-face {
+        font-family: "intelone-mono-font-family-regular";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-regular.woff2")
+          format("woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "S-CoreDream-3Light";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
       body {
         margin: 0;
         box-sizing: border-box;
@@ -54,7 +68,8 @@
       .login_logo {
         margin-top: 30px;
         font-size: 30px;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: "intelone-mono-font-family-regular";
+        font-weight: 400;
       }
 
       .login_form {
@@ -63,6 +78,7 @@
         /* Full width for responsiveness */
         flex-direction: column;
         align-items: center;
+        font-family: "S-CoreDream-3Light";
       }
 
       .login_text {
@@ -127,7 +143,6 @@
             LOG IN
           </button>
         </form>
-        <a class="login_bottom" href="">Forgot your password?</a>
       </div>
     </article>
     <div id="footer"></div>

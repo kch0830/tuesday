@@ -1,0 +1,35 @@
+.profile>* {
+    height: 27vw;
+}
+
+.footer {
+    color: gray;
+}
+
+.card {
+    padding: 15px;
+    border: none;
+}
+
+.thumbnail {
+    aspect-ratio: 4/3;
+}
+
+/* 반응형으로 설정 */
+@media (max-width: 768px) {
+    .thumbnail {
+        width: 90vw;
+    }
+}
+
+@media (769px <= width <= 1200px) {
+    .thumbnail {
+        width: 45vw;
+    }
+}
+
+@media (min-width: 1201px) {
+    .thumbnail {
+        width: 30vw;
+    }
+}

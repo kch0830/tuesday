@@ -59,7 +59,10 @@ function cardLoad() {
                 card.setAttribute('style', 'background-color: inherit; color: inherit; border: none');
                 card.innerHTML = `<img src="${articleElement.src1}" class="card-img-top thumbnail" alt="1">
     <div class="card-body">
-        <h5 class="card-title">${articleElement.title}</h5>
+        <div class="d-flex justify-content-between">
+            <h5 class="card-title">${articleElement.title}</h5>
+            <div>${articleElement.day} ${articleElement.weather}</div>
+        </div>
         <div class="d-flex justify-content-center">
             <button type="button" class="btn btn-outline-success read-more" data-bs-toggle="modal" data-bs-target="#modal${articleElement.num}">Read More</button>
         </div>
@@ -75,9 +78,9 @@ function cardLoad() {
                 modal.setAttribute('style', 'color: inherit');
                 modal.innerHTML = `<div class="modal-dialog modal-xl">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header d-flex justify-content-between">
                     <h5 class="modal-title" id="exampleModalLabel${articleElement.num}">${articleElement.title}</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    ${articleElement.day} ${articleElement.weather}
                 </div>
                 <div class="modal-body">
                 <div class="picture border">

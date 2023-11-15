@@ -53,45 +53,53 @@ day.textContent = formattedDate;
 const publish = document.querySelector('.publish');
 publish.addEventListener('click', function () {
   const title = document.querySelector('.title');
-  const firstImg = document.querySelector('img');
+  const Img = document.querySelectorAll('img');
   const content = document.querySelector('textarea');
+  console.log(Img);
 
   const titleValue = title.value;
-  const firstImgValue = firstImg.src;
+  const firstImgValue = Img[0].src;
+  const secondImgValue = Img[1].src;
+  const thirdImgValue = Img[2].src;
+  const fourthImgValue = Img[3].src;
   const contentValue = content.value;
   //localStorage의 userName객체에서 loggedinUser를 가져와서 author라는 변수에 할당
-  const author = JSON.parse(localStorage.getItem('userName')).loggedinUser;
+  const author = localStorage.getItem('loggedinUser');
 
   //articleElement
-  const article = localStorage.getItem('articleElement');
+  // const article = localStorage.getItem('articleElement');
 
-  let articleArray;
-  if (article == null) {
-    articleArray = [];
-  } else {
-    const addArticleArray = JSON.parse(article);
-    articleArray = addArticleArray;
-  }
+  // let articleArray;
+  // if (article == null) {
+  //   articleArray = [];
+  // } else {
+  //   const addArticleArray = JSON.parse(article);
+  //   articleArray = addArticleArray;
+  // }
 
-  let number;
-  const lastArticle = articleArray[articleArray.length - 1];
-  if (lastArticle == undefined) {
-    number = 0;
-  } else {
-    number = articleArray[articleArray.length - 1].num + 1;
-  }
+  // let number;
+  // const lastArticle = articleArray[articleArray.length - 1];
+  // if (lastArticle == undefined) {
+  //   number = 0;
+  // } else {
+  //   number = articleArray[articleArray.length - 1].num + 1;
+  // }
 
-  console.log(number);
+  // console.log(number);
   const thisArticle = {
     title: titleValue,
     content: contentValue,
     author: author,
-    src: firstImgValue,
-    num: number,
+    src1: firstImgValue,
+    src2: secondImgValue,
+    src3: thirdImgValue,
+    src4: fourthImgValue,
+    num: Date.now(),
   };
 
-  articleArray.push(thisArticle);
+  // articleArray.push(thisArticle);
   //console.log(articleArray);
-  let test = JSON.stringify(articleArray);
-  localStorage.setItem('articleElement', test);
+  let test = JSON.stringify(thisArticle);
+  localStorage.setItem(`article${Date.now()}`, test);
+  location.href='articles.html'
 });

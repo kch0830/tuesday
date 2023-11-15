@@ -13,13 +13,16 @@ localStorage - articleElement
     title: 제목
     content: 내용
     author: 작성자 (== userName일 때 show)
-    src: 이미지 주소
+    src1~4: 이미지 주소
     num: 일련번호
+    day: 작성일자
+    weather: 날씨
 }
 
-localStorage - userName
+localStorage
 {
     userName: 보고자 하는 블로그의 작성자
     loggedinUser: 현재 로그인한 사용자
     loginSuccess: 로그인 유무
+    darkMode: 다크모드
 }

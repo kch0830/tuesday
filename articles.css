@@ -22,7 +22,7 @@
     }
 }
 
-@media (769px <= width <= 1200px) {
+@media (769px <=width <=1200px) {
     .thumbnail {
         width: 45vw;
     }
@@ -33,3 +33,15 @@
         width: 30vw;
     }
 }
+
+.dark-mode {
+    background-color: #000000;
+    color: white;
+}
+
+.dark-mode button {
+    color: white;
+    border: 1px solid white;
+}
+
+

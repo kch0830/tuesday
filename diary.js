@@ -38,7 +38,7 @@ const day = document.querySelector('.day');
 
 let year = date.getFullYear();
 let month = date.getMonth() + 1;
-let days = date.getDay();
+let days = date.getDate();
 
 // '년-월-일' 형식으로 표시합니다.
 if (days < 10) {
@@ -55,6 +55,7 @@ publish.addEventListener('click', function () {
   const title = document.querySelector('.title');
   const Img = document.querySelectorAll('img');
   const content = document.querySelector('textarea');
+  const weather = document.querySelector('select');
   console.log(Img);
 
   const titleValue = title.value;
@@ -63,6 +64,7 @@ publish.addEventListener('click', function () {
   const thirdImgValue = Img[2].src;
   const fourthImgValue = Img[3].src;
   const contentValue = content.value;
+  const weatherValue = weather[weather.selectedIndex].text;
   //localStorage의 userName객체에서 loggedinUser를 가져와서 author라는 변수에 할당
   const author = localStorage.getItem('loggedinUser');
 
@@ -95,6 +97,8 @@ publish.addEventListener('click', function () {
     src3: thirdImgValue,
     src4: fourthImgValue,
     num: Date.now(),
+    day: formattedDate,
+    weather: weatherValue,
   };
 
   // articleArray.push(thisArticle);

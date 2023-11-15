@@ -64,7 +64,7 @@ function loggedIn() {
 
 function myAppend() {
   localStorage.setItem("userName", localStorage.getItem("loggedinUser"));
-  location.href = "write.html";
+  location.href = "diary.html";
 }
 
 function myBlog() {

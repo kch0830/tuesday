@@ -22,7 +22,6 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    
 
     <!-- slick library -->
     <script
@@ -36,7 +35,6 @@
     />
 
     <title>app.end</title>
-    
 
     <!-- slick -->
     <script type="text/javascript">
@@ -58,15 +56,13 @@
         });
       });
     </script>
-   
 
     <script src="mainPage.js"></script>
     <link rel="stylesheet" href="mainPage.css" />
+  </head>
 
-</head>
-
-<body>
-  <div id="header"></div>
+  <body>
+    <div id="header"></div>
     <main>
         <div class="welcome">app.end에 오신 것을 환영합니다.</div>
         <div class="showBlogs">
@@ -84,23 +80,19 @@
                 <div class="border border-0"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlFbZ0qoHSr-CWywK-pIEg4Pth26WQnPsBgeMzC4Lo26gqfq3-lHH5wxZ7QBiqO0k9u9M&usqp=CAU" alt="" height="100%" width="100%" style="overflow: hidden; object-fit: cover; object-position: center center;" /></div>
             </div>
         </div>
+      </div>
 
-        <div id="footer"></div>
+      <div id="footer"></div>
     </main>
-    
 
     <script>
-      $(function() {
-        $('#header').load('header.html');
-        $('#footer').load("footer.html");
-        
-      })
+      $(function () {
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+      });
       // setTimeout(function() {
       //     $.getScript('header.js')
       //   }, 1000)
-
     </script>
-    
-</body>
-
+  </body>
 </html>

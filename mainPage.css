@@ -6,26 +6,30 @@
     font-style: normal;
   }
   @font-face {
-    font-family: "EASTARJET-Medium";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/EASTARJET-Medium.woff2")
-      format("woff2");
-    font-weight: 500;
+    font-family: 'Cafe24Supermagic-Bold-v1.0';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/Cafe24Supermagic-Bold-v1.0.woff2') format('woff2');
+    font-weight: 700;
     font-style: normal;
-  }
+}
+  @font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
   body {
     margin: 0;
   }
 
   .dark-mode {
-    background-color: #000000;
+    background-color: rgba(0,0,0,0.9);
     color: white;
   }
 
   .dark-mode button {
     color: white;
-    background-color: white;
-    /* border: 1px solid white; */
+    /* background-color: inherit; */
   }
 
   header .headerContainer {
@@ -34,6 +38,7 @@
     align-items: center;
     height: 60px;
     padding: 12px 70px;
+    font-family: 'S-CoreDream-3Light';
     /* remove */
     /* border: 1px solid black; */
   }
@@ -48,10 +53,10 @@
 
   header .headerContainer .headerTitle {
     height: 100%;
-    font-size: 25px;
+    font-size: 30px;
     font-family: "intelone-mono-font-family-regular";
-    line-height: 25px;
-    font-weight: 600;
+    line-height: 30px;
+    font-weight: 1000;
   }
   header .headerContainer .headerRight {
     display: flex;
@@ -89,7 +94,7 @@
   
   header .headerContainer .headerRight .btn-header {
     background-color: inherit; /* 배경색과 동일 */
-    border: 1px solid;
+    border: 1px solid rgba(0,0,0,0.2);
     outline: 0;
     width: 90px;
     height: 33px;
@@ -109,10 +114,10 @@
     height: 150px;
     text-align: center;
     line-height: 150px;
-    font-size: 40px;
+    font-size: 55px;
     font-weight: 700;
     color: white;
-    font-family: "EASTARJET-Medium";
+    font-family:'Cafe24Supermagic-Bold-v1.0';
     background-color: #1ec996ab; /* 변경 */
     /* remove */
     /* border: 1px solid black; */

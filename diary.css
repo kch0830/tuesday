@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'S-CoreDream-3Light';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -13,26 +20,16 @@
   cursor: pointer;
   line-height: 40px;
   text-align: center;
-}
-
-/* 헤더 */
-header {
-  width: 100%;
-  height: 70px;
-  border-bottom: 1px solid #9c9c9c;
-}
-.logo {
-  font-size: 30px;
-  margin-left: 50px;
-  line-height: 70px;
-  font-weight: 600;
+  font-family: 'S-CoreDream-3Light';
 }
 
 /* 콘텐츠 */
 #contents {
   margin: 0 auto;
   width: 70vw;
-  height: calc(100vh - 130px);
+  /* height: calc(100vh - 130px); */
+  min-height: 100vh;
+  font-family: 'S-CoreDream-3Light';
 }
 
 /* 사진 첨부 */
@@ -173,7 +170,7 @@ header {
 }
 
 /* 푸터 */
-footer {
-  height: 60px;
-  border-top: 1px solid #9c9c9c;
-}
+#footer {
+  position: relative;
+  bottom: 0;
+  }

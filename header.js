@@ -11,6 +11,7 @@ $(document).ready(function () {
   // darkMode가 저장되어 있다면 설정을 반영
   if (darkMode === "dark") {
     document.body.classList.add("dark-mode");
+    $('.modal-content').attr('style', 'background-color: #19191d;');
 
     let btn = document.querySelector("#color-mode");
     btn.innerHTML = `<i class="bi bi-moon-fill"></i>`;
@@ -30,10 +31,12 @@ function changeColor() {
     // dark-mode가 활성화된 경우 로컬 스토리지에 저장
     localStorage.setItem("darkMode", "dark");
     btn.innerHTML = `<i class="bi bi-moon-fill colorModeAni"></i>`;
+    $('.modal-content').attr('style', 'background-color: #19191d;');
   } else {
     // dark-mode가 비활성화된 경우 로컬 스토리지에서 제거
     localStorage.setItem("darkMode", null);
     btn.innerHTML = `<i class="bi bi-brightness-high colorModeAni"></i>`;
+    $('.modal-content').attr('style', 'background-color: white;');
   }
 }
 

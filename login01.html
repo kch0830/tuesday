@@ -25,6 +25,9 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+
+    <!-- sweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
       @font-face {
         font-family: "intelone-mono-font-family-regular";
@@ -176,6 +179,27 @@
       ];
       const LOGIN_PW = "1234";
 
+      function wrongAlert() {
+        Swal.fire({
+          icon: "error",
+          title: "웁스!",
+          text: "아이디와 비밀번호를 다시 확인해주세요!",
+        });
+        $(".swal2-confirm").attr(
+          "style",
+          "background-color: #1ec996ab; border: none;"
+        );
+        // $(".swal2-loader").attr("style", "background-color: white;");
+      }
+
+      function noInputAlert() {
+        Swal.fire("아이디와 비밀번호를 입력해주세요!");
+        $(".swal2-confirm").attr(
+          "style",
+          "background-color: #1ec996ab; border: none;"
+        );
+      }
+
       const performLogin = () => {
         if (loginId.value && loginPw.value) {
           console.log(`id: ${loginId.value}, pw: ${loginPw.value}`);
@@ -190,15 +214,19 @@
               location.href = link;
             } else {
               loginPw.value = "";
-              alert("Invalid password. Please try again");
+
+              // alert("Invalid password. Please try again");
+              wrongAlert();
             }
           } else {
             loginId.value = "";
             loginPw.value = "";
-            alert("Invalid username. Please try again");
+            // alert("Invalid username. Please try again");
+            wrongAlert();
           }
         } else {
-          alert("Please enter your username and password");
+          // alert("Please enter your username and password");
+          noInputAlert();
         }
       };
       // function toggleDarkMode() {

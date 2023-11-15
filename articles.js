@@ -78,8 +78,9 @@ function cardLoad() {
                 modal.setAttribute('style', 'color: inherit');
                 modal.innerHTML = `<div class="modal-dialog modal-xl">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header d-flex justify-content-between">
                     <h5 class="modal-title" id="exampleModalLabel${articleElement.num}">${articleElement.title}</h5>
+                    ${articleElement.day} ${articleElement.weather}
                 </div>
                 <div class="modal-body">
                 <div class="picture border">

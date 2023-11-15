@@ -27,43 +27,43 @@
 </head>
 
 <body>
-    <header class="p-5 text-center">
+    <!-- <header class="p-5 text-center">
         <div class="d-flex justify-content-between">
             <h1 onclick="gotoMain()">app.end</h1>
 
-            <!-- Darkmode toggle 버튼 만들기 -->
+            
             <button type="button" onclick="nightSwitch()" class="border border-0 bg-transparent">
                 <i class="fa-solid fa-moon moon" style="font-size: 2rem;"></i>
             </button>
         </div>
     </header>
+    <hr> -->
+    <div id="header"></div>
     <hr>
 
-    <div class="profile mb-5" id="profile">
+    <div class="profile mt-5 mb-5" id="profile">
     </div>
     <hr>
 
     <div class="d-flex justify-content-between p-3">
         <h3>글 목록</h3>
-        <a href="write.html" type="button" class="btn btn-outline-success" id="write">새 글 작성</a>
+        <!-- <a href="write.html" type="button" class="btn btn-outline-success" id="write">새 글 작성</a> -->
     </div>
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 m-auto" id="container">
     </div>
 
-    <footer>
-        <hr>
-        <div class="text-center footer">By tuesday</div>
-    </footer>
+    <div id="footer"></div>
 
     <script>
-        // localStorage.setItem('userName', 'author1');
-        // localStorage.setItem('loggedinUser', 'author1');
 
         $(document).ready(function () {
             cardLoad();
             profileLoad();
-            hiddenBtn();
-            isDark();
+        })
+
+        $(function() {
+            $('#header').load('header.html');
+            $('#footer').load('footer.html');
         })
     </script>
 </body>

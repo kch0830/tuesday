@@ -93,7 +93,7 @@
       display: none;
     }
     /* change */
-    header .headerContainer {
+    /* header .headerContainer {
       padding: 7px 10px;
       position: relative;
     }    
@@ -125,7 +125,6 @@
       width: 75px;
       padding: 1.5px;
       margin-top: 7px;
-      /* background-color: green; */
     }
     header .headerContainer .headerRight.active div {
       width: 100%;
@@ -133,21 +132,18 @@
       font-size: 12px;
       padding: 7px 0 0 0;
       color:black;
-      /* background-color: green; */
-    }
+    } */
   }
   @media screen and (max-height: 500px) {
     main .showBlogs .slider-nav .nav-container {
       display: none;
     }
-    .headerContainer {
+    /* .headerContainer {
       padding: 0;
-    }
+    } */
   }
 
-.headerTitle:hover {
-  cursor: pointer;
-}
+
 
 .slider-for:hover {
   cursor: pointer;

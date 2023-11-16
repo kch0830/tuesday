@@ -18,7 +18,7 @@
   }
 
   .dark-mode {
-    background-color: #000000;
+    background-color: rgba(0,0,0,0.9);
     color: white;
   }
 
@@ -27,6 +27,17 @@
     background-color: white;
     /* border: 1px solid white; */
   }
+
+  .dark-mode header .headerContainer .headerRight.active {
+    background-color: #191919;
+  }
+  .dark-mode header .headerContainer .headerRight.active button {
+    border: 1px solid white;
+  }
+
+.dark-mode header .headerContainer .headerRight.active .accountInfo {
+  color: white;
+}
 
   header .headerContainer {
     display: flex;
@@ -53,11 +64,20 @@
     line-height: 25px;
     font-weight: 600;
   }
+  /* change */
+  header .headerContainer .btn-list {
+  position: absolute;
+  right: 15px;
+  font-size: 20px;
+  color:#000000;
+  display: none;
+}
   header .headerContainer .headerRight {
     display: flex;
     align-items: center;
     height: 100%;
   }
+
   header .headerContainer .headerRight #color-mode {
     display: flex;
     align-items: center;
@@ -105,6 +125,12 @@
     /* border: 1px solid black; */
   }
 
+  main {
+    /* height:calc(100vh - 60px); */
+    min-height: calc(100vh - 105px);
+  }
+
+  /* 
   main .welcome {
     height: 150px;
     text-align: center;
@@ -113,21 +139,21 @@
     font-weight: 700;
     color: white;
     font-family: "EASTARJET-Medium";
-    background-color: #1ec996ab; /* 변경 */
-    /* remove */
-    /* border: 1px solid black; */
+    background-color: #1ec996ab; 
   }
+   */
+
   main .showBlogs {
-    padding: 10px;
-    height: 60vh;
+    padding:0;
+    height: 80vh;
     /* remove */
     /* border: 1px solid black; */
   }
   main .showBlogs .slider-for {
-    height: 70%;
-    margin: 2vh 15vw;
-    /* remove */
-    border: 1px solid black;
+    height: 65%;
+    /* margin: 2vh 15vw; */
+    /* change */
+    margin: 0 0 7vh 0;
   }
   main .showBlogs .slider-for .slick-list {
     width: 100%;
@@ -144,13 +170,13 @@
 
   main .showBlogs .slider-nav {
     width: 100%;
-    height: 30%;
-    padding: 0 10vw;
+    height: 35%;
+    padding: 0vw 15vw;
+    /* display: flex; */
   }
   main .showBlogs .slider-nav .nav-container {
-    align-items: center;
-    height: 50%;
     display: flex;
+    height: 40%;
     padding: 0;
   }
   main .showBlogs .slider-nav .nav-container button {
@@ -162,6 +188,7 @@
   main .showBlogs .slider-nav .nav-container .slick-list {
     width: 100%;
     height: 100%;
+    margin-bottom: 50px;
   }
   main .showBlogs .slider-nav .nav-container .slick-list .slick-track {
     height: 100%;
@@ -176,10 +203,11 @@
     display: flex;
     justify-content: center;
     list-style: none;
+    padding: 0;
   }
 
   main .showBlogs .slider-nav .slick-dots li button {
-    margin: 0 1vw;
+    margin: 3vh 1vh;
     background-color: rgba(1, 1, 1, 0.2);
     border: 0;
     outline: none;
@@ -192,17 +220,67 @@
     display: none;
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
     main .showBlogs .slider-nav .nav-container {
       display: none;
+    }
+    /* change */
+    header .headerContainer {
+      padding: 7px 10px;
+      position: relative;
+    }    
+    header .headerContainer .btn-list {
+      display: block;
+      color: inherit;
+    }
+    header .headerContainer .headerRight {
+      display: none;
+      flex-direction: column;
+    }
+    header .headerContainer .headerRight.active {
+      display: flex;
+      position: absolute;
+      right: 0px;
+      top: 45px;
+      border-radius: 0 0 8px 8px;
+      z-index: 3;
+      width: auto;
+      height: auto;
+      padding: 10px 7px;
+      background-color: white;
+    }
+    header .headerContainer .headerRight.active button {
+      width: 100%;
+      font-size: 13px;
+      line-height: 22px;
+      border:1px solid rgba(0,0,0,0.2);
+      width: 75px;
+      padding: 1.5px;
+      margin-top: 7px;
+      /* background-color: green; */
+    }
+    header .headerContainer .headerRight.active div {
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+      padding: 7px 0 0 0;
+      color:black;
+      /* background-color: green; */
     }
   }
   @media screen and (max-height: 500px) {
     main .showBlogs .slider-nav .nav-container {
       display: none;
     }
+    .headerContainer {
+      padding: 0;
+    }
   }
 
 .headerTitle:hover {
+  cursor: pointer;
+}
+
+.slider-for:hover {
   cursor: pointer;
 }

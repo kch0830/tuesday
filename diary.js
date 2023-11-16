@@ -41,6 +41,7 @@ const day = document.querySelector('.day');
 let year = date.getFullYear();
 let month = date.getMonth() + 1;
 let days = date.getDate();
+
 // '년-월-일' 형식으로 표시합니다.
 if (days < 10) {
   days = '0' + days;
@@ -53,51 +54,17 @@ day.textContent = formattedDate;
 const publish = document.querySelector('.publish');
 publish.addEventListener('click', function () {
   const title = document.querySelector('.title');
-  const firstImg = document.querySelector('img');
+  const Img = document.querySelectorAll('img');
   const content = document.querySelector('textarea');
+  const weather = document.querySelector('select');
+  console.log(Img);
 
   const titleValue = title.value;
-  const firstImgValue = firstImg.src;
+  const firstImgValue = Img[0].src;
+  const secondImgValue = Img[1].src;
+  const thirdImgValue = Img[2].src;
+  const fourthImgValue = Img[3].src;
   const contentValue = content.value;
-
-  //localStorage의 userName객체에서 loggedinUser를 가져와서 author라는 변수에 할당
-  //localStorage.setItem('userName', JSON.stringify({ loggedinUser: 'JohnDoe' }));
-  //임의로 변수를 할당하는 방법
-  const author = JSON.parse(localStorage.getItem('userName')).loggedinUser;
-
-  //articleElement
-  const article = localStorage.getItem('articleElement');
-
-  let articleArray;
-  if (article == null) {
-    articleArray = [];
-  } else {
-    const addArticleArray = JSON.parse(article);
-    articleArray = addArticleArray;
-  }
-
-  let number;
-  const lastArticle = articleArray[articleArray.length - 1];
-  if (lastArticle == undefined) {
-    number = 0;
-  } else {
-    number = articleArray[articleArray.length - 1].num + 1;
-  }
-
-  console.log(number);
-  const thisArticle = {
-    title: titleValue,
-    content: contentValue,
-    author: author,
-    src: firstImgValue,
-    num: number,
-  };
-
-  articleArray.push(thisArticle);
-  //console.log(articleArray);
-  let test = JSON.stringify(articleArray);
-  localStorage.setItem('articleElement', test);
-});
 
 // 날씨 드롭다운
 const weatherTxt = document.querySelector('.weatherTxt');
@@ -125,53 +92,51 @@ weather.addEventListener('blur', () => {
   const parent = weatherTxt.parentNode;
   parent.classList.remove('active');
 });
-// 임시 저장하기
-const save = document.querySelector('.save');
-publish.addEventListener('click', function () {
-  const title = document.querySelector('.title');
-  const firstImg = document.querySelector('img');
-  const content = document.querySelector('textarea');
 
-  const titleValue = title.value;
-  const firstImgValue = firstImg.src;
-  const contentValue = content.value;
 
+  const weatherValue = weather[weather.selectedIndex].text;
   //localStorage의 userName객체에서 loggedinUser를 가져와서 author라는 변수에 할당
-  //임의로 변수를 할당하는 방법
-  const author = JSON.parse(localStorage.getItem('userName')).loggedinUser;
+  const author = localStorage.getItem('loggedinUser');
+
 
   //articleElement
-  const article = localStorage.getItem('articleElement');
+  // const article = localStorage.getItem('articleElement');
 
-  let articleArray;
-  if (article == null) {
-    articleArray = [];
-  } else {
-    const addArticleArray = JSON.parse(article);
-    articleArray = addArticleArray;
-  }
+  // let articleArray;
+  // if (article == null) {
+  //   articleArray = [];
+  // } else {
+  //   const addArticleArray = JSON.parse(article);
+  //   articleArray = addArticleArray;
+  // }
 
-  let number;
-  const lastArticle = articleArray[articleArray.length - 1];
-  if (lastArticle == undefined) {
-    number = 0;
-  } else {
-    number = articleArray[articleArray.length - 1].num + 1;
-  }
+  // let number;
+  // const lastArticle = articleArray[articleArray.length - 1];
+  // if (lastArticle == undefined) {
+  //   number = 0;
+  // } else {
+  //   number = articleArray[articleArray.length - 1].num + 1;
+  // }
 
-  console.log(number);
+  // console.log(number);
   const thisArticle = {
     title: titleValue,
     content: contentValue,
     author: author,
-    src: firstImgValue,
-    num: number,
+    src1: firstImgValue,
+    src2: secondImgValue,
+    src3: thirdImgValue,
+    src4: fourthImgValue,
+    num: Date.now(),
+    day: formattedDate,
+    weather: weatherValue,
   };
 
-  articleArray.push(thisArticle);
+  // articleArray.push(thisArticle);
   //console.log(articleArray);
-  let test = JSON.stringify(articleArray);
-  localStorage.setItem('articleElement', test);
+  let test = JSON.stringify(thisArticle);
+  localStorage.setItem(`article${Date.now()}`, test);
+  location.href='articles.html'
 });
 
 // 임시저장 클릭 > 로컬로 데이터 저장

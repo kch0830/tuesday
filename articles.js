@@ -57,11 +57,14 @@ function cardLoad() {
                 const card = document.createElement('div');
                 card.classList.add('card');
                 card.setAttribute('style', 'background-color: inherit; color: inherit; border: none');
-                card.innerHTML = `<img src="${articleElement.src}" class="card-img-top thumbnail" alt="1">
+                card.innerHTML = `<img src="${articleElement.src1}" class="card-img-top thumbnail" alt="1">
     <div class="card-body">
-        <h5 class="card-title">${articleElement.title}</h5>
+        <div class="d-flex justify-content-between">
+            <h5 class="card-title">${articleElement.title}</h5>
+            <div>${articleElement.day} ${articleElement.weather}</div>
+        </div>
         <div class="d-flex justify-content-center">
-            <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modal${articleElement.num}">Read More</button>
+            <button type="button" class="read_btn" data-bs-toggle="modal" data-bs-target="#modal${articleElement.num}">Read More</button>
         </div>
     </div>`;
 
@@ -75,16 +78,30 @@ function cardLoad() {
                 modal.setAttribute('style', 'color: inherit');
                 modal.innerHTML = `<div class="modal-dialog modal-xl">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header d-flex justify-content-between">
                     <h5 class="modal-title" id="exampleModalLabel${articleElement.num}">${articleElement.title}</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    ${articleElement.day} ${articleElement.weather}
                 </div>
                 <div class="modal-body">
-                    <img src="${articleElement.src}" alt="${articleElement.title}" width="50%" class="d-block mb-2 m-auto" style="aspect-ratio: 4/3;">
+                <div class="picture border">
+                    <div class="pictureBoard">
+                        <img src="${articleElement.src1}" alt="${articleElement.title}" class="d-block mb-2 m-auto" style="aspect-ratio: 4/3;">
+                        </div>
+                        <div class="pictureBoard">
+                        <img src="${articleElement.src2}" alt="${articleElement.title}" class="d-block mb-2 m-auto" style="aspect-ratio: 4/3;">
+                        </div>
+                        <div class="pictureBoard">
+                        <img src="${articleElement.src3}" alt="${articleElement.title}" class="d-block mb-2 m-auto" style="aspect-ratio: 4/3;">
+                        </div>
+                        <div class="pictureBoard">
+                        <img src="${articleElement.src4}" alt="${articleElement.title}" class="d-block mb-2 m-auto" style="aspect-ratio: 4/3;">s
+                        </div>
+                    </div>
+                    <br>
                     ${articleElement.content}
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary closing" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="close_btn" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>`;
@@ -96,3 +113,23 @@ function cardLoad() {
         }
     }
 }
+
+$(function() {
+    $(document).ready(function() {
+        const width = $(window).width();
+        if (width<=300) {
+            $('.read-more').addClass('btn-sm');
+        } else {
+            $('.read-more').removeClass('btn-sm');
+        }
+    })
+
+    $(window).resize(function() {
+        const width = $(window).width();
+        if (width<=300) {
+            $('.read-more').addClass('btn-sm');
+        } else {
+            $('.read-more').removeClass('btn-sm');
+        }
+    })
+})

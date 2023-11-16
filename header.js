@@ -3,6 +3,13 @@ let isLogin = localStorage.getItem("loginSuccess");
 //   유저 아이디 로컬 스토리지에서 가져오기
 let userId = localStorage.getItem("ID가 들어있는 변수명");
 
+const listBtn = document.querySelector(".btn-list");
+const headerBtn = document.querySelector(".headerRight");
+
+listBtn.addEventListener("click", () => {
+  headerBtn.classList.toggle("active");
+});
+
 $(document).ready(function () {
   //   로그인 했는지 확인하고 로그인 상태이면 함수 호출
   if (isLogin == "true") loggedIn();
@@ -11,13 +18,15 @@ $(document).ready(function () {
   // darkMode가 저장되어 있다면 설정을 반영
   if (darkMode === "dark") {
     document.body.classList.add("dark-mode");
-
+    $(".modal-content").attr("style", "background-color: #19191d;");
+    $(".showBlogs .slider-nav .slick-dots li button").attr(
+      "style",
+      "background-color: white"
+    );
     let btn = document.querySelector("#color-mode");
     btn.innerHTML = `<i class="bi bi-moon-fill"></i>`;
   }
 });
-
-// 페이지 로드 시 다크 모드 값을 확인하고 설정
 
 // 다크 모드 토글 함수
 function changeColor() {
@@ -30,10 +39,36 @@ function changeColor() {
     // dark-mode가 활성화된 경우 로컬 스토리지에 저장
     localStorage.setItem("darkMode", "dark");
     btn.innerHTML = `<i class="bi bi-moon-fill colorModeAni"></i>`;
+    $(".modal-content").attr("style", "background-color: #19191d;");
+    $(".headerContainer .headerRight.active").attr(
+      "style",
+      "background-color: #191919;"
+    );
+    $(".headerContainer .headerRight.active .accountInfo").attr(
+      "style",
+      "color: white;"
+    );
+    $(".showBlogs .slider-nav .slick-dots li button").attr(
+      "style",
+      "background-color: white"
+    );
   } else {
     // dark-mode가 비활성화된 경우 로컬 스토리지에서 제거
     localStorage.setItem("darkMode", null);
     btn.innerHTML = `<i class="bi bi-brightness-high colorModeAni"></i>`;
+    $(".modal-content").attr("style", "background-color: white;");
+    $(".headerContainer .headerRight.active").attr(
+      "style",
+      "background-color: white;"
+    );
+    $(".headerContainer .headerRight.active .accountInfo").attr(
+      "style",
+      "color: black;"
+    );
+    $(".showBlogs .slider-nav .slick-dots li button").attr(
+      "style",
+      "background-color: rgba(1, 1, 1, 0.2);"
+    );
   }
 }
 
@@ -64,7 +99,7 @@ function loggedIn() {
 
 function myAppend() {
   localStorage.setItem("userName", localStorage.getItem("loggedinUser"));
-  location.href = "write.html";
+  location.href = "diary.html";
 }
 
 function myBlog() {

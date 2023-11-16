@@ -32,9 +32,7 @@ function profileLoad() {
             </div>`;
                 profile.append(profileCard);
             }
-        } catch (error) {
-            console.log(error);
-        }
+        } catch (error) {}
     }
 }
 
@@ -107,9 +105,7 @@ function cardLoad() {
                 container.append(card);
                 container.append(modal);
             }
-        } catch (error) {
-            console.log(error);
-        }
+        } catch (error) {}
     }
 }
 

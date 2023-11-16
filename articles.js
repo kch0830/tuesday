@@ -64,7 +64,7 @@ function cardLoad() {
             <div>${articleElement.day} ${articleElement.weather}</div>
         </div>
         <div class="d-flex justify-content-center">
-            <button type="button" class="btn btn-outline-success read-more" data-bs-toggle="modal" data-bs-target="#modal${articleElement.num}">Read More</button>
+            <button type="button" class="read_btn" data-bs-toggle="modal" data-bs-target="#modal${articleElement.num}">Read More</button>
         </div>
     </div>`;
 
@@ -101,7 +101,7 @@ function cardLoad() {
                     ${articleElement.content}
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary closing" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="close_btn" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>`;

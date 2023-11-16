@@ -30,6 +30,7 @@
   /* height: calc(100vh - 130px); */
   /* min-height: 100vh; */
   height: calc(100%);
+  min-height: calc(100vh - 105px);
   font-family: 'S-CoreDream-3Light';
 }
 

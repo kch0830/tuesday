@@ -113,3 +113,23 @@ function cardLoad() {
         }
     }
 }
+
+$(function() {
+    $(document).ready(function() {
+        const width = $(window).width();
+        if (width<=300) {
+            $('.read-more').addClass('btn-sm');
+        } else {
+            $('.read-more').removeClass('btn-sm');
+        }
+    })
+
+    $(window).resize(function() {
+        const width = $(window).width();
+        if (width<=300) {
+            $('.read-more').addClass('btn-sm');
+        } else {
+            $('.read-more').removeClass('btn-sm');
+        }
+    })
+})

@@ -53,22 +53,30 @@
         height: 100vh;
       }
 
+      article {
+        min-height: calc(100vh - 105px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
       a {
         text-decoration: none;
       }
 
       .login_wrapper {
         position: relative;
-        min-height: 75vh;
+        /* min-height: 75vh; */
         display: flex;
         flex-direction: column;
+        /* justify-content: center; */
         align-items: center;
         width: 80%;
         /* Adjusted width for responsiveness */
         max-width: 500px;
-        top: 50%;
+        /* top: 50%;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-50%); */
         /* Centering using translate */
       }
 
@@ -240,6 +248,11 @@
     <style>
       header .btn-logIn {
         display: none;
+      }
+
+      .dark-mode .login_wrapper .login_form #LOGIN_BTN {
+        background-color: #1ec996ab;
+        color: white;
       }
     </style>
   </body>

@@ -26,9 +26,8 @@ function profileLoad() {
                 </div>
             </div>
             <div class="col-8 p-3">
-                <h5><strong>${profileElement.user}의 블로그</strong></h5>
+                <h5><strong>${profileElement.title}</strong></h5>
                 <br>
-                <h5><b>${profileElement.title}</b></h5>
                 <p>${profileElement.content}</p>
             </div>`;
                 profile.append(profileCard);
@@ -64,7 +63,7 @@ function cardLoad() {
             <div>${articleElement.day} ${articleElement.weather}</div>
         </div>
         <div class="d-flex justify-content-center">
-            <button type="button" class="btn btn-outline-success read-more" data-bs-toggle="modal" data-bs-target="#modal${articleElement.num}">Read More</button>
+            <button type="button" class="read_btn" data-bs-toggle="modal" data-bs-target="#modal${articleElement.num}">Read More</button>
         </div>
     </div>`;
 
@@ -101,7 +100,7 @@ function cardLoad() {
                     ${articleElement.content}
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary closing" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="close_btn" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>`;
@@ -113,3 +112,23 @@ function cardLoad() {
         }
     }
 }
+
+$(function() {
+    $(document).ready(function() {
+        const width = $(window).width();
+        if (width<=300) {
+            $('.read-more').addClass('btn-sm');
+        } else {
+            $('.read-more').removeClass('btn-sm');
+        }
+    })
+
+    $(window).resize(function() {
+        const width = $(window).width();
+        if (width<=300) {
+            $('.read-more').addClass('btn-sm');
+        } else {
+            $('.read-more').removeClass('btn-sm');
+        }
+    })
+})

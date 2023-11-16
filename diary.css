@@ -28,7 +28,8 @@
   margin: 0 auto;
   width: 70vw;
   /* height: calc(100vh - 130px); */
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  height: calc(100%);
   font-family: 'S-CoreDream-3Light';
 }
 
@@ -151,7 +152,7 @@
   border: 0;
   overflow: hidden;
   font-size: 1.125rem;
-  padding: 20px 0;
+  padding: 10px 0;
   line-height: 24px;
 }
 #text:focus {
@@ -162,15 +163,12 @@
 }
 /* 태그와 버튼 */
 .savePubBtn {
-  float: right;
+display: flex;
+justify-content: end;
+margin: 20px 0;
 }
 .savePubBtn > .btn {
   border: 1px solid lightgray;
   font-size: 16px;
 }
 
-/* 푸터 */
-#footer {
-  position: relative;
-  bottom: 0;
-  }

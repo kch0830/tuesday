@@ -23,17 +23,10 @@ $(document).ready(function () {
       "style",
       "background-color: white"
     );
-    // 적용 안됨
-    $(".headerContainer .headerRight.active").attr(
-      "style",
-      "background-color: red;"
-    );
     let btn = document.querySelector("#color-mode");
     btn.innerHTML = `<i class="bi bi-moon-fill"></i>`;
   }
 });
-
-// 페이지 로드 시 다크 모드 값을 확인하고 설정
 
 // 다크 모드 토글 함수
 function changeColor() {
@@ -49,7 +42,11 @@ function changeColor() {
     $(".modal-content").attr("style", "background-color: #19191d;");
     $(".headerContainer .headerRight.active").attr(
       "style",
-      "background-color: rgba(0,0,0,0.9);"
+      "background-color: #191919;"
+    );
+    $(".headerContainer .headerRight.active .accountInfo").attr(
+      "style",
+      "color: white;"
     );
     $(".showBlogs .slider-nav .slick-dots li button").attr(
       "style",
@@ -63,6 +60,10 @@ function changeColor() {
     $(".headerContainer .headerRight.active").attr(
       "style",
       "background-color: white;"
+    );
+    $(".headerContainer .headerRight.active .accountInfo").attr(
+      "style",
+      "color: black;"
     );
     $(".showBlogs .slider-nav .slick-dots li button").attr(
       "style",

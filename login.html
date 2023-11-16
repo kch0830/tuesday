@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+    <!-- jQuery cdn -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- bootstrap library -->
+    <!-- CSS 불러오기 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- JS 불러오기 -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- sweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css"
+    />
+    <style>
+      @font-face {
+        font-family: "intelone-mono-font-family-regular";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-regular.woff2")
+          format("woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "S-CoreDream-3Light";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+      body {
+        margin: 0;
+        box-sizing: border-box;
+        height: 100vh;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .login_wrapper {
+        position: relative;
+        min-height: 75vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        /* Adjusted width for responsiveness */
+        max-width: 500px;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        /* Centering using translate */
+      }
+
+      .login_logo {
+        margin-top: 30px;
+        font-size: 30px;
+        font-family: "intelone-mono-font-family-regular";
+        font-weight: 400;
+      }
+
+      .login_form {
+        display: flex;
+        width: 100%;
+        /* Full width for responsiveness */
+        flex-direction: column;
+        align-items: center;
+        font-family: "S-CoreDream-3Light";
+      }
+
+      .login_text {
+        width: 100%;
+        height: 40px;
+        margin: 3px 0 3px 0;
+        padding: 0 10px 0 10px;
+        border: 1px solid black;
+        border-radius: 5px;
+      }
+
+      .login_text::placeholder {
+        color: gray;
+      }
+
+      .login_btn {
+        width: 100%;
+        height: 40px;
+        margin: 60px;
+        /* Adjusted margin for better spacing */
+        font-size: 16px;
+        font-weight: 1000;
+        border-radius: 5px;
+        background-color: #1ec996ab;
+        border: none;
+        transition-duration: 0.4s;
+        color: white;
+      }
+
+      .login_btn:hover {
+        cursor: pointer;
+        /* background-color: #04aa6d; Green */
+        background-color: white;
+        border: 2px solid #1ec996ab;
+        color: #1ec996ab;
+      }
+
+      .login_bottom {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- <button class="dark-mode" onclick="toggleDarkMode()">Dark Mode</button> -->
+    <div id="header"></div>
+    <article>
+      <div class="login_wrapper">
+        <div class="login_logo">app.end</div>
+        <br /><br />
+        <form class="login_form">
+          <input
+            id="LOGIN_ID"
+            class="login_text"
+            type="text"
+            name="id"
+            placeholder="Username"
+          />
+          <input
+            id="LOGIN_PW"
+            class="login_text"
+            type="password"
+            name="id"
+            placeholder="Password"
+          />
+
+          <button
+            id="LOGIN_BTN"
+            class="login_btn"
+            type="button"
+            onclick="performLogin()"
+          >
+            LOG IN
+          </button>
+        </form>
+      </div>
+    </article>
+    <div id="footer"></div>
+
+    <script>
+      $(function () {
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+      });
+
+      const loginId = document.getElementById("LOGIN_ID");
+      const loginPw = document.getElementById("LOGIN_PW");
+      const loginBtn = document.getElementById("LOGIN_BTN");
+
+      const VALID_LOGIN_IDS = [
+        "aiden2978",
+        "yewonkim301",
+        "kch0830",
+        "jihyehan91",
+      ];
+      const LOGIN_PW = "1234";
+
+      function wrongAlert() {
+        Swal.fire({
+          icon: "error",
+          title: "웁스!",
+          text: "아이디와 비밀번호를 다시 확인해주세요!",
+        });
+        $(".swal2-confirm").attr(
+          "style",
+          "background-color: #1ec996ab; border: none;"
+        );
+        // $(".swal2-loader").attr("style", "background-color: white;");
+      }
+
+      function noInputAlert() {
+        Swal.fire("아이디와 비밀번호를 입력해주세요!");
+        $(".swal2-confirm").attr(
+          "style",
+          "background-color: #1ec996ab; border: none;"
+        );
+      }
+
+      const performLogin = () => {
+        if (loginId.value && loginPw.value) {
+          console.log(`id: ${loginId.value}, pw: ${loginPw.value}`);
+          if (VALID_LOGIN_IDS.includes(loginId.value)) {
+            if (loginPw.value === LOGIN_PW) {
+              localStorage.setItem("loggedinUser", loginId.value);
+              loginId.value = "";
+              loginPw.value = "";
+
+              link = "mainPage.html"; // 링크
+              localStorage.setItem("loginSuccess", true);
+              location.href = link;
+            } else {
+              loginPw.value = "";
+
+              // alert("Invalid password. Please try again");
+              wrongAlert();
+            }
+          } else {
+            loginId.value = "";
+            loginPw.value = "";
+            // alert("Invalid username. Please try again");
+            wrongAlert();
+          }
+        } else {
+          // alert("Please enter your username and password");
+          noInputAlert();
+        }
+      };
+      // function toggleDarkMode() {
+      //     document.body.classList.toggle('dark-mode');
+      // }
+    </script>
+    <style>
+      header .btn-logIn {
+        display: none;
+      }
+    </style>
+  </body>
+</html>

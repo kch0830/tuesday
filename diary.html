@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <link rel="stylesheet" href="/diary.css" />
+    <script
+      src="https://kit.fontawesome.com/a1edb119b5.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <title>A picture diary</title>
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <div id="header"></div>
+    <!-- 콘텐츠 -->
+    <section id="contents">
+      <!-- 사진 첨부 -->
+      <div id="picture">
+        <div class="pictureBoard">
+          <img />
+          <div class="imgBtn">
+            <label for="img1" class="btn">업로드</label>
+            <input id="img1" class="img" type="file" />
+          </div>
+        </div>
+        <div class="pictureBoard">
+          <img />
+          <div class="imgBtn">
+            <label for="img2" class="btn">업로드</label>
+            <input id="img2" class="img" type="file" />
+          </div>
+        </div>
+        <div class="pictureBoard">
+          <img />
+          <div class="imgBtn">
+            <label for="img3" class="btn">업로드</label>
+            <input id="img3" class="img" type="file" />
+          </div>
+        </div>
+        <div class="pictureBoard">
+          <img />
+          <div class="imgBtn">
+            <label for="img4" class="btn">업로드</label>
+            <input id="img4" class="img" type="file" />
+          </div>
+        </div>
+      </div>
+      <!-- 제목 내용 버튼 -->
+      <div id="content">
+        <div class="titBox">
+          <input class="title" type="text" placeholder="제목입니다" />
+        </div>
+        <!-- 날짜와 날씨 -->
+        <div class="dayWeatherBox">
+          <div class="day"></div>
+          <div class="weather">
+            날씨
+            <select name="weater" id="weater">
+              <option>☀️</option>
+              <option>🌥️</option>
+              <option>☔</option>
+              <option>❄️</option>
+            </select>
+          </div>
+        </div>
+        <div class="txtBox">
+          <textarea
+            id="text"
+            cols="30"
+            rows="10"
+            placeholder="오늘 하루는 어땠나요?"
+          ></textarea>
+        </div>
+        <div id="btnTag">
+          <div class="tag"></div>
+          <div class="savePubBtn">
+            <!-- <button class="btn save" type="submit" name="btnSave">
+              임시저장
+            </button> -->
+            <button class="btn publish" type="submit" name="btnPublish">
+              발행하기
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 푸터 -->
+    <div id="footer"></div>
+    <script src="/diary.js"></script>
+    <script>
+      $(function () {
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+      });
+    </script>
+  </body>
+</html>

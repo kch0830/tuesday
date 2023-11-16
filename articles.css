@@ -36,7 +36,7 @@ body {
 }
 
 /* 반응형으로 설정 */
-@media (max-width: 300px) {
+@media (max-width: 576px) {
     #profile {
         margin: 5px;
     }
@@ -58,7 +58,7 @@ body {
     }
 }
 
-@media (301px <=width <=768px) {
+@media (577spx <=width <=768px) {
     #profile {
         margin: 20px;
     }
@@ -191,6 +191,7 @@ body {
 }
 
 .read_btn {
+    margin-top: 10px;
     width: 100px;
     height: 35px;
     border-radius: 10%;

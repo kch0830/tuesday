@@ -26,9 +26,8 @@ function profileLoad() {
                 </div>
             </div>
             <div class="col-8 p-3">
-                <h5><strong>${profileElement.user}의 블로그</strong></h5>
+                <h5><strong>${profileElement.title}</strong></h5>
                 <br>
-                <h5><b>${profileElement.title}</b></h5>
                 <p>${profileElement.content}</p>
             </div>`;
                 profile.append(profileCard);

@@ -1,0 +1,120 @@
+@font-face {
+  font-family: "intelone-mono-font-family-regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dark-mode {
+    background-color: rgba(0,0,0,0.9);
+    color: white;
+  }
+
+.dark-mode button {
+    color: white;
+    background-color: white;
+    /* border: 1px solid white; */
+  }
+
+.dark-mode header .headerContainer .headerRight.active {
+    background-color: #191919;
+  }
+
+
+.dark-mode header .headerContainer .headerRight.active button {
+    border: 1px solid white;
+  }
+
+.dark-mode header .headerContainer .headerRight.active .accountInfo {
+  color: white;
+}
+
+header .headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 12px 70px;
+  }
+
+header .headerContainer button:hover {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+    0 2px 4px rgba(0,0,0,0.07), 
+    0 4px 8px rgba(0,0,0,0.07), 
+    0 8px 16px rgba(0,0,0,0.07),
+    0 16px 32px rgba(0,0,0,0.07), 
+    0 32px 64px rgba(0,0,0,0.07);
+  }
+
+header .headerContainer .headerTitle {
+    height: 100%;
+    font-size: 25px;
+    font-family: "intelone-mono-font-family-regular";
+    line-height: 25px;
+    font-weight: 600;
+  }
+
+header .headerContainer .btn-list {
+  position: absolute;
+  right: 15px;
+  font-size: 20px;
+  color:#000000;
+  display: none;
+}
+
+header .headerContainer .headerRight {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  header .headerContainer .headerRight #color-mode {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: inherit;
+    padding: 5px;
+    border: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 20px;
+  }
+
+.colorModeAni {
+    animation: rotateColorMode 2s;
+  }
+
+  @keyframes rotateColorMode {
+    0% {
+      transform: rotate(0);
+    }
+    50% {
+      transform: rotate(45deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+  
+header .headerContainer .headerRight .btn-header {
+    background-color: inherit;
+    border: 1px solid;
+    outline: 0;
+    width: 90px;
+    height: 33px;
+    border-radius: 20px;
+    font-size: 15px;
+    margin: 0 1vw;
+  }
+
+header .headerContainer .headerRight .accountInfo {
+    padding: 5px;
+    font-size: 17px;
+    cursor: pointer;
+  }
+
+.hidden {
+    display: none;
+  }

@@ -66,32 +66,32 @@ publish.addEventListener('click', function () {
   const fourthImgValue = Img[3].src;
   const contentValue = content.value;
 
-// 날씨 드롭다운
-const weatherTxt = document.querySelector('.weatherTxt');
-const dropIcons = document.querySelectorAll('.dropIcons');
+  // 날씨 드롭다운
+  const weatherTxt = document.querySelector('.weatherTxt');
+  const dropIcons = document.querySelectorAll('.dropIcons');
 
-const handleWeather = (item) => {
-  weatherTxt.parentNode.classList.remove('active');
-  weatherTxt.innerHTML = item.textContent;
-};
-
-dropIcons.forEach((icon) => {
-  icon.addEventListener('click', () => handleWeather(icon));
-});
-
-weatherTxt.addEventListener('click', () => {
-  if (weatherTxt.parentNode.classList.contains('active')) {
+  const handleWeather = (item) => {
     weatherTxt.parentNode.classList.remove('active');
-  } else {
-    weatherTxt.parentNode.classList.add('active');
-  }
-});
+    weatherTxt.innerHTML = item.textContent;
+  };
 
-const weather = document.querySelector('.weather');
-weather.addEventListener('blur', () => {
-  const parent = weatherTxt.parentNode;
-  parent.classList.remove('active');
-});
+  dropIcons.forEach((icon) => {
+    icon.addEventListener('click', () => handleWeather(icon));
+  });
+
+  weatherTxt.addEventListener('click', () => {
+    if (weatherTxt.parentNode.classList.contains('active')) {
+      weatherTxt.parentNode.classList.remove('active');
+    } else {
+      weatherTxt.parentNode.classList.add('active');
+    }
+  });
+
+  // const weather = document.querySelector('.weather');
+  // weather.addEventListener('blur', () => {
+  //   const parent = weatherTxt.parentNode;
+  //   parent.classList.remove('active');
+  // });
 
 
   const weatherValue = weather[weather.selectedIndex].text;
@@ -136,7 +136,7 @@ weather.addEventListener('blur', () => {
   //console.log(articleArray);
   let test = JSON.stringify(thisArticle);
   localStorage.setItem(`article${Date.now()}`, test);
-  location.href='articles.html'
+  location.href = 'articles.html'
 });
 
 // 임시저장 클릭 > 로컬로 데이터 저장

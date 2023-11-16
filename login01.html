@@ -7,10 +7,9 @@
     <title>login</title>
     <style>
         body {
-            margin: 0px;
+            margin: 0;
             box-sizing: border-box;
-           
-
+            height: 100vh;
         }
 
         a {
@@ -22,22 +21,25 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 500px;
+            width: 80%;
+            /* Adjusted width for responsiveness */
+            max-width: 500px;
             top: 50%;
             left: 50%;
-            margin: -175px 0px 0px -190px;
+            transform: translate(-50%, -50%);
+            /* Centering using translate */
         }
 
         .login_logo {
             margin-top: 30px;
             font-size: 30px;
-            font-family: Arial, Helvetica, sans-serif
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         .login_form {
             display: flex;
-            width: 80%;
-            margin-top: 10px;
+            width: 100%;
+            /* Full width for responsiveness */
             flex-direction: column;
             align-items: center;
         }
@@ -55,35 +57,34 @@
             color: gray;
         }
 
-        .login_text::value {
-            color: black;
-        }
-
         .login_btn {
             width: 100%;
             height: 40px;
-            margin: 10px 0;
-            /* color: black; */
+            margin: 60px;
+            /* Adjusted margin for better spacing */
             font-size: 16px;
+
         }
 
         .login_bottom {
-            margin-top: 20px;
             font-size: 20px;
+
         }
     </style>
 
 </head>
 
 <body>
+    <!-- <button class="dark-mode" onclick="toggleDarkMode()">Dark Mode</button> -->
+
     <article>
         <div class="login_wrapper">
             <div class="login_logo">APP.END</div>
             <br><br>
             <form class="login_form">
-                <input id="LOGIN_ID" class="login_text" type="text" name="id" placeholder="ID">
-                <input id="LOGIN_PW" class="login_text" type="password" name="id" placeholder="PW">
-                <br><br>
+                <input id="LOGIN_ID" class="login_text" type="text" name="id" placeholder="Username">
+                <input id="LOGIN_PW" class="login_text" type="password" name="id" placeholder="Password">
+
                 <button id="LOGIN_BTN" class="login_btn" type="button" onclick="performLogin()">LOG IN</button>
             </form>
             <a class="login_bottom" href="">Forgot your password?</a>
@@ -95,7 +96,7 @@
         const loginPw = document.getElementById('LOGIN_PW');
         const loginBtn = document.getElementById('LOGIN_BTN');
 
-        const VALID_LOGIN_IDS= ['aaaa', 'bbbb', 'cccc', 'dddd'];
+        const VALID_LOGIN_IDS = ['aaaa', 'bbbb', 'cccc', 'dddd'];
         const LOGIN_PW = '1234';
 
         const performLogin = () => {
@@ -106,23 +107,28 @@
                         localStorage.setItem('loggedIn', loginId.value);
                         loginId.value = '';
                         loginPw.value = '';
+                        alert('Login Successful!')
 
                         link = 'https://www.google.co.kr'; // 링크
                         location.href = link;
                     } else {
                         loginPw.value = ''
-                        alert('비밀번호 확인 요망');
+                        alert('Invalid password. Please try again');
                     }
                 } else {
                     loginId.value = ''
                     loginPw.value = ''
-                    alert('아이디 확인 요망');
+                    alert('Invalid username. Please try again');
                 }
             } else {
-                alert('아이디와 비밀번호를 입력해 주세요');
+                alert('Please enter your username and password');
             }
 
+
         }
+        // function toggleDarkMode() {
+        //     document.body.classList.toggle('dark-mode');
+        // }
     </script>
 </body>
 

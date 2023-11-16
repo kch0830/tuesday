@@ -264,3 +264,7 @@
 .headerTitle:hover {
   cursor: pointer;
 }
+
+.slider-for:hover {
+  cursor: pointer;
+}

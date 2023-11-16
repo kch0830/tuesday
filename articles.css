@@ -32,21 +32,67 @@ body {
 }
 
 /* 반응형으로 설정 */
-@media (max-width: 768px) {
+@media (max-width: 300px) {
+    #profile {
+        margin: 5px;
+    }
+
     .thumbnail {
         width: 90vw;
     }
+
+    .profile * {
+        font-size: 0.9rem;
+    }
+
+    .card * {
+        font-size: 0.8rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
 }
 
-@media (769px <=width <=1200px) {
+@media (301px <= width <= 768px) {
+    #profile {
+        margin: 20px;
+    }
+
+    .thumbnail {
+        width: 90vw;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+    }
+}
+
+@media (769px <= width <= 1200px) {
+    #profile {
+        margin: 20px;
+    }
+
     .thumbnail {
         width: 45vw;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
     }
 }
 
 @media (min-width: 1201px) {
+    #profile {
+        margin: 20px;
+    }
+
     .thumbnail {
         width: 30vw;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
     }
 }
 
@@ -97,4 +143,53 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: center center;
+}
+
+#profile {
+    min-height: 150px;
+}
+
+@media (max-width: 767px) {
+    .pictureBoard {
+        width: 50%;
+        height: 40vw;
+        background-color: #f5f5f5;
+        line-height: 40vw;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .pictureBoard:nth-child(2) {
+        border-bottom: 1px solid #9c9c9c;
+        border-left: 1px solid #9c9c9c;
+    }
+    
+    .pictureBoard:nth-child(3) {
+        border-right: 1px solid #9c9c9c;
+        border-top: 1px solid #9c9c9c;
+    }
+
+    .picture {
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width: 768px) {
+    .pictureBoard {
+        width: 25%;
+        height: 20vw;
+        background-color: #f5f5f5;
+        line-height: 20vw;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .pictureBoard:nth-child(2) {
+        border-right: 1px solid #9c9c9c;
+        border-left: 1px solid #9c9c9c;
+    }
+    
+    .pictureBoard:nth-child(3) {
+        border-right: 1px solid #9c9c9c;
+    }
 }

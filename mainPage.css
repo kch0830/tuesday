@@ -18,7 +18,7 @@
   }
 
   .dark-mode {
-    background-color: #000000;
+    background-color: rgba(0,0,0,0.9);
     color: white;
   }
 
@@ -27,6 +27,17 @@
     background-color: white;
     /* border: 1px solid white; */
   }
+
+  .dark-mode header .headerContainer .headerRight.active {
+    background-color: #191919;
+  }
+  .dark-mode header .headerContainer .headerRight.active button {
+    border: 1px solid white;
+  }
+
+.dark-mode header .headerContainer .headerRight.active .accountInfo {
+  color: white;
+}
 
   header .headerContainer {
     display: flex;
@@ -114,6 +125,11 @@
     /* border: 1px solid black; */
   }
 
+  main {
+    height:calc(100vh - 60px);
+  }
+
+  /* 
   main .welcome {
     height: 150px;
     text-align: center;
@@ -122,10 +138,10 @@
     font-weight: 700;
     color: white;
     font-family: "EASTARJET-Medium";
-    background-color: #1ec996ab; /* 변경 */
-    /* remove */
-    /* border: 1px solid black; */
+    background-color: #1ec996ab; 
   }
+   */
+
   main .showBlogs {
     padding:0;
     height: 80vh;
@@ -235,11 +251,10 @@
     header .headerContainer .headerRight.active button {
       width: 100%;
       font-size: 13px;
-      line-height: 20px;
+      line-height: 22px;
       border:1px solid rgba(0,0,0,0.2);
-      height: 22px;
       width: 75px;
-      padding: 1px;
+      padding: 1.5px;
       margin-top: 7px;
       /* background-color: green; */
     }

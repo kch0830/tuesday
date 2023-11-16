@@ -79,7 +79,8 @@
         display: flex;
         justify-content: center;
         position: relative;
-        bottom: 0px;
+        /* bottom: 0; */
+        transform: translateY(0%);
       }
       .footer-container {
         width: 90vw;
@@ -100,6 +101,11 @@
       .footer-right p {
         margin-left: 15px;
         line-height: 15px;
+      }
+
+      .dark-mode .footer-container {
+        color: white;
+        border-color: white;
       }
     </style>
   </body>

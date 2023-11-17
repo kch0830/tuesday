@@ -80,7 +80,6 @@ function logOut() {
     <i class="bi bi-brightness-high"></i></button>
     <button class="btn-header btn-logIn" onclick="location.href='login01.html'">로그인</button>`
   );
-  $(".welcome").text("app.end에 오신 것을 환영합니다.");
 }
 
 function loggedIn() {
@@ -91,7 +90,7 @@ function loggedIn() {
   $(".headerContainer .headerRight").append(
     `<button class="btn-header btn-write" onclick="myAppend()">
         새 글 작성
-      </button><div class="accountInfo" onclick="myBlog()">${loggedinUser}</div><button class="btn-header btn-logOut" onclick="location.href='mainPage.html'; logOut()";>
+      </button><div class="accountInfo" onclick="myBlog()">${loggedinUser}</div><button class="btn-header btn-logOut" onclick="location.href='index.html'; logOut()";>
       로그아웃
     </button>`
   );

@@ -124,3 +124,16 @@ mainPage에서 클릭한 사용자의 블로그를 보여주는 페이지입니�
 블로그의 글들은 bootstrap의 card 요소를 사용하였습니다. 게시글의 제목, 작성일, 날씨와 대표 사진 한 장의 src를 localStorage에서 받아와 표시하였습니다. 화면의 너비에 따라 mediaQuery를 이용하여 한 줄에 뜨는 게시글의 개수를 반응형으로 제어하였습니다.
 
 글의 내용은 bootstrap의 modal 요소를 사용하여 표시하였습니다. 게시글의 제목, 내용, 작성일, 날씨, 그리고 사진 4장의 src를 localStorage에서 불러와 표시하였습니다. 화면의 너비에 따라 modal의 max-width가 달라지도록 하였으며, 또한 flex-wrap 속성을 이용하여 사진 네 장의 배치 방식을 제어하였습니다.
+
+### login.html
+
+각 조원의 아이디 4개를 입력받아 로그인 가능한 페이지 제작하였습니다.
+performLogin() 함수를 선언하여, 각각의 입력받은 값이 전역 변수 const VALID_LOGIN_IDS, const LOGIN_PW 값과 일치하였을 때, location.href를 이용해 페이지 메인 페이지로 이동 하도록 제작하였습니다.
+또한,  localStorage를 사용하여, 브라우저에 key-value 값을 storage에 저장하고, 이를 이용하여 로그인 후에도 데이터가 유지되며, 각 LOGIN_IDS의 블로그의 주인 페이지로 이동 가능합니다.
+
+추가로 LOGIN_IDS 혹은 LOGIN_PW 값과 일치하지 않는 값을 입력받았을 때, wrongAlert(), noInputAlert() 함수를 제작하여, alert 메세지를 띄울 수 있도록 제작하였습니다.
+
+addEventListener를 이용해 enter 키를 활용한 이벤트를 제작하여, 로그인 버튼 클릭 뿐 아니라, key-code 13인 enter 키가 누름이 해제될 때 로그인 버튼이 실행 되도록 제작하였습니다.
+
+
+

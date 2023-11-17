@@ -93,7 +93,7 @@ publish.addEventListener('click', function () {
   const thirdImgValue = Img[2].src;
   const fourthImgValue = Img[3].src;
   const contentValue = content.value;
-  const weatherValue = weather.textContent;
+  const weatherValue = weatherDropToggle.textContent;
 
 
   if (weatherValue == '오늘 날씨') {

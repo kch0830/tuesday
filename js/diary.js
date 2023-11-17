@@ -1,5 +1,4 @@
-// 버튼 클릭 시 이미지 로드
-
+// 업로드 클릭 시 이미지 로드
 document.addEventListener('DOMContentLoaded', function () {
   const inputImgs = document.querySelectorAll('.img');
 
@@ -8,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   function inputHandler(e) {
-    console.log(e);
     const file = e.target.files[0];
     const reader = new FileReader();
     const pictureBoard = e.target.closest('.pictureBoard');
@@ -19,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     reader.onload = function () {
       img.setAttribute('src', this.result);
-      console.log(this); // this는 FileReader, resutl는 FileReader의 result로 이미지 url
 
       // 삭제 버튼 생성
       const btn = document.createElement('button');
@@ -47,6 +44,28 @@ if (days < 10) {
   days = '0' + days;
 }
 const formattedDate = `${year}-${month}-${days}`;
+
+// 날씨 드롭다운
+const weatherDropToggle = document.querySelector('.weatherDropToggle');
+const dropList = document.querySelector('.dropList');
+
+document.addEventListener('click', function (event) {
+  const target = event.target;
+
+  if (target === weatherDropToggle || target.closest('.dropIcons')) {
+    dropList.classList.toggle('show');
+
+    if (target !== weatherDropToggle) {
+      const value = target.textContent;
+      weatherDropToggle.textContent = value;
+      weatherDropToggle.classList.add('selected');
+      dropList.classList.remove('show');
+    }
+  } else {
+    dropList.classList.remove('show');
+  }
+});
+
 // DOM 요소에 할당합니다.
 day.textContent = formattedDate;
 
@@ -56,7 +75,7 @@ publish.addEventListener('click', function () {
   const title = document.querySelector('.title');
   const Img = document.querySelectorAll('img');
   const content = document.querySelector('textarea');
-  const weather = document.querySelector('select');
+  const weather = document.querySelector('ul');
   console.log(Img);
 
   const titleValue = title.value;
@@ -65,60 +84,11 @@ publish.addEventListener('click', function () {
   const thirdImgValue = Img[2].src;
   const fourthImgValue = Img[3].src;
   const contentValue = content.value;
+  const weatherValue = weatherDropToggle.textContent;
 
-  // 날씨 드롭다운
-  const weatherTxt = document.querySelector('.weatherTxt');
-  const dropIcons = document.querySelectorAll('.dropIcons');
-
-  const handleWeather = (item) => {
-    weatherTxt.parentNode.classList.remove('active');
-    weatherTxt.innerHTML = item.textContent;
-  };
-
-  dropIcons.forEach((icon) => {
-    icon.addEventListener('click', () => handleWeather(icon));
-  });
-
-  weatherTxt.addEventListener('click', () => {
-    if (weatherTxt.parentNode.classList.contains('active')) {
-      weatherTxt.parentNode.classList.remove('active');
-    } else {
-      weatherTxt.parentNode.classList.add('active');
-    }
-  });
-
-  // const weather = document.querySelector('.weather');
-  // weather.addEventListener('blur', () => {
-  //   const parent = weatherTxt.parentNode;
-  //   parent.classList.remove('active');
-  // });
-
-
-  // const weatherValue = weather[weather.selectedIndex].text;
   //localStorage의 userName객체에서 loggedinUser를 가져와서 author라는 변수에 할당
   const author = localStorage.getItem('loggedinUser');
 
-
-  //articleElement
-  // const article = localStorage.getItem('articleElement');
-
-  // let articleArray;
-  // if (article == null) {
-  //   articleArray = [];
-  // } else {
-  //   const addArticleArray = JSON.parse(article);
-  //   articleArray = addArticleArray;
-  // }
-
-  // let number;
-  // const lastArticle = articleArray[articleArray.length - 1];
-  // if (lastArticle == undefined) {
-  //   number = 0;
-  // } else {
-  //   number = articleArray[articleArray.length - 1].num + 1;
-  // }
-
-  // console.log(number);
   const thisArticle = {
     title: titleValue,
     content: contentValue,
@@ -136,14 +106,5 @@ publish.addEventListener('click', function () {
   //console.log(articleArray);
   let test = JSON.stringify(thisArticle);
   localStorage.setItem(`article${Date.now()}`, test);
-  location.href = 'articles.html'
+  location.href = 'articles.html';
 });
-
-// 임시저장 클릭 > 로컬로 데이터 저장
-// 저장한 데이터를 불러올 버튼이 필요...
-// 불러올 버튼 임시저장 버튼 옆에 숫자로 표시 > 로컬 누적 저장이 되면 숫자가 증가
-// 저장할 데이터의 유저를 따져야하는가...?
-
-// 로컬 스토리지에는 문자열만 저장
-// 로컬 스토리지에 객체나 배열을 저장하기 위해서는 객체를 문자열로 변환해서 저장
-//JSON.stringfy() 함수 사용하여 객체와 배열을 JSON 문자열로 변환

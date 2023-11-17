@@ -5,143 +5,15 @@
     font-weight: 400;
     font-style: normal;
   }
-  @font-face {
-    font-family: "EASTARJET-Medium";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/EASTARJET-Medium.woff2")
-      format("woff2");
-    font-weight: 500;
-    font-style: normal;
-  }
 
   body {
     margin: 0;
-  }
-
-  .dark-mode {
-    background-color: rgba(0,0,0,0.9);
-    color: white;
-  }
-
-  .dark-mode button {
-    color: white;
-    background-color: white;
-    /* border: 1px solid white; */
-  }
-
-  .dark-mode header .headerContainer .headerRight.active {
-    background-color: #191919;
-  }
-  .dark-mode header .headerContainer .headerRight.active button {
-    border: 1px solid white;
-  }
-
-.dark-mode header .headerContainer .headerRight.active .accountInfo {
-  color: white;
-}
-
-  header .headerContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-    padding: 12px 70px;
-    /* remove */
-    /* border: 1px solid black; */
-  }
-  header .headerContainer button:hover {
-    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
-    0 2px 4px rgba(0,0,0,0.07), 
-    0 4px 8px rgba(0,0,0,0.07), 
-    0 8px 16px rgba(0,0,0,0.07),
-    0 16px 32px rgba(0,0,0,0.07), 
-    0 32px 64px rgba(0,0,0,0.07);
-  }
-
-  header .headerContainer .headerTitle {
-    height: 100%;
-    font-size: 25px;
-    font-family: "intelone-mono-font-family-regular";
-    line-height: 25px;
-    font-weight: 600;
-  }
-  /* change */
-  header .headerContainer .btn-list {
-  position: absolute;
-  right: 15px;
-  font-size: 20px;
-  color:#000000;
-  display: none;
-}
-  header .headerContainer .headerRight {
-    display: flex;
-    align-items: center;
-    height: 100%;
-  }
-
-  header .headerContainer .headerRight #color-mode {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: inherit;
-    padding: 5px;
-    border: 0;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    font-size: 20px;
-  }
-
-  .colorModeAni {
-    animation: rotateColorMode 2s;
-  }
-
-  @keyframes rotateColorMode {
-    0% {
-      transform: rotate(0);
-    }
-    50% {
-      transform: rotate(45deg);
-    }
-    100% {
-      transform: rotate(0);
-    }
-  }
-  
-  header .headerContainer .headerRight .btn-header {
-    background-color: inherit; /* 배경색과 동일 */
-    border: 1px solid;
-    outline: 0;
-    width: 90px;
-    height: 33px;
-    border-radius: 20px;
-    font-size: 15px;
-    margin: 0 1vw;
-  }
-  header .headerContainer .headerRight .accountInfo {
-    padding: 5px;
-    font-size: 17px;
-    cursor: pointer;
-    /* remove */
-    /* border: 1px solid black; */
   }
 
   main {
     /* height:calc(100vh - 60px); */
     min-height: calc(100vh - 105px);
   }
-
-  /* 
-  main .welcome {
-    height: 150px;
-    text-align: center;
-    line-height: 150px;
-    font-size: 40px;
-    font-weight: 700;
-    color: white;
-    font-family: "EASTARJET-Medium";
-    background-color: #1ec996ab; 
-  }
-   */
 
   main .showBlogs {
     padding:0;
@@ -216,16 +88,12 @@
     border-radius: 2px;
   }
 
-  .hidden {
-    display: none;
-  }
-
   @media screen and (max-width: 768px) {
     main .showBlogs .slider-nav .nav-container {
       display: none;
     }
     /* change */
-    header .headerContainer {
+    /* header .headerContainer {
       padding: 7px 10px;
       position: relative;
     }    
@@ -257,7 +125,6 @@
       width: 75px;
       padding: 1.5px;
       margin-top: 7px;
-      /* background-color: green; */
     }
     header .headerContainer .headerRight.active div {
       width: 100%;
@@ -265,21 +132,18 @@
       font-size: 12px;
       padding: 7px 0 0 0;
       color:black;
-      /* background-color: green; */
-    }
+    } */
   }
   @media screen and (max-height: 500px) {
     main .showBlogs .slider-nav .nav-container {
       display: none;
     }
-    .headerContainer {
+    /* .headerContainer {
       padding: 0;
-    }
+    } */
   }
 
-.headerTitle:hover {
-  cursor: pointer;
-}
+
 
 .slider-for:hover {
   cursor: pointer;

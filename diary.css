@@ -253,7 +253,7 @@ footer {
   border-top: 1px solid #9c9c9c;
 }
 
-/* 반응형으로 설정 */
+/* 반응형으로 설정. */
 @media screen and (max-width: 1200px) {
   .pictureBoard {
     flex: 1;

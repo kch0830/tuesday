@@ -49,7 +49,7 @@ const formattedDate = `${year}-${month}-${days}`;
 // DOM 요소에 할당합니다.
 day.textContent = formattedDate;
 
-// 발행하기 버튼 누르면 로컬 스토리지에 저장
+// 발행하기 버튼 누르면 로컬 스토리지에 저장.
 const publish = document.querySelector('.publish');
 publish.addEventListener('click', function () {
   const title = document.querySelector('.title');

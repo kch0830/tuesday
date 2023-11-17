@@ -19,7 +19,7 @@ function wrongAlert() {
     Swal.fire({
         icon: "error",
         title: "웁스!",
-        text: "아이디와 비밀번호를 다시 확인해주세요!",
+        text: `아이디와 비밀번호를 다시 확인해주세요!`,
     });
     $(".swal2-confirm").attr(
         "style",
@@ -28,7 +28,7 @@ function wrongAlert() {
 }
 
 function noInputAlert() {
-    Swal.fire("아이디와 비밀번호를 입력해주세요!");
+    Swal.fire("아이디와 비밀번호를\n입력해주세요!");
     $(".swal2-confirm").attr(
         "style",
         "background-color: #1ec996ab; border: none;"

@@ -281,6 +281,21 @@ li {
   }
 }
 
+@media screen and (max-width: 280px) {
+  .title {
+    font-size: 1.2rem;
+  }
+  .dayWeatherBox>* {
+    font-size: 0.8rem;
+  }
+  .weather {
+    width: 80px;
+  }
+  #text {
+    font-size: 0.9rem;
+  }
+}
+
 .dark-mode #content .titBox .title {
   background-color: #191919;
   color: lightgray;
@@ -317,4 +332,10 @@ li {
 
 .dark-mode #contents #picture .pictureBoard .imgBtn > label:hover {
   color: #191919;
+}
+
+@media screen and (max-width: 576px) {
+  .swal2-title {
+    font-size: 1.3rem;
+  }
 }

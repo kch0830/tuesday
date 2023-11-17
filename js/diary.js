@@ -1,5 +1,5 @@
-function weatherAlert() {
-  Swal.fire("날씨를 입력해주세요!");
+function nullAlert() {
+  Swal.fire("내용을 입력해주세요!");
   $(".swal2-confirm").attr(
     "style",
     "background-color: #1ec996ab; border: none;"
@@ -96,8 +96,8 @@ publish.addEventListener('click', function () {
   const weatherValue = weatherDropToggle.textContent;
 
 
-  if (weatherValue == '오늘 날씨') {
-    weatherAlert();
+  if (weatherValue == '오늘 날씨' || titleValue == '' || contentValue == '' || firstImgValue == '' || secondImgValue == '' || thirdImgValue == '' || fourthImgValue == '') {
+    nullAlert();
   } else {
     //localStorage의 userName객체에서 loggedinUser를 가져와서 author라는 변수에 할당
     const author = localStorage.getItem('loggedinUser');
@@ -116,7 +116,7 @@ publish.addEventListener('click', function () {
     };
 
     let test = JSON.stringify(thisArticle);
-    localStorage.setItem(`article${Date.now()}`, test);
+    localStorage.setItem(`article${thisArticle.num}`, test);
     location.href = "articles.html";
   }
 

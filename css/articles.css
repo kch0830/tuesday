@@ -209,6 +209,15 @@ body {
     color: white;
 }
 
+.delete_btn {
+    width: 60px;
+    height: 35px;
+    border-radius: 10%;
+    background-color: #1ec996ab;
+    border: none;
+    color: white;
+}
+
 .dark-mode .read_btn {
     background-color: #1ec996ab;
     color: white;
@@ -216,6 +225,12 @@ body {
 }
 
 .dark-mode .close_btn {
+    background-color: #1ec996ab;
+    color: white;
+    border: none;
+}
+
+.dark-mode .delete_btn {
     background-color: #1ec996ab;
     color: white;
     border: none;

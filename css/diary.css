@@ -200,8 +200,6 @@ li {
   background-color: #fff;
   border: 1px solid transparent;
   border-radius: 3px;
-  /* transition: border-color 200ms ease-in, padding 200ms ease-in,
-    max-height 200ms ease-in, box-shadow 200ms ease-in; */
   text-align: center;
   padding-left: 0;
 }

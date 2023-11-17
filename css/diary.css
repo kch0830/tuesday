@@ -304,3 +304,17 @@ li {
   background-color: #191919;
   color: lightgray;
 }
+
+.dark-mode #contents #picture button {
+  background-color: #191919;
+  color: lightgray;
+}
+
+.dark-mode #contents #picture .pictureBoard .imgBtn > label:active {
+  border: 1px solid #191919;
+  color: #191919;
+}
+
+.dark-mode #contents #picture .pictureBoard .imgBtn > label:hover {
+  color: #191919;
+}

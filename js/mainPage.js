@@ -1,12 +1,10 @@
 //   로그인 상태가 맞는지 로컬 스토리지에서 확인하기
-let isLogin2 = localStorage.getItem("loginSuccess");
+const isLogin2 = localStorage.getItem("loginSuccess");
 
 $(document).ready(function () {
   //   로그인 했는지 확인하고 로그인 상태이면 함수 호출
   if (isLogin2 == "true") welcomeLoggedin();
-});
 
-$(document).ready(function () {
   // .slider-nav flex 하기 위해 div로 감싸기
   $(".slider-nav>button, .slider-nav>div").addClass("nav-box");
   $(".nav-box").wrapAll($('<div class="nav-container"></div>'));
@@ -27,8 +25,8 @@ function welcomeLoggedin() {
 }
 
 function onBlog(user) {
-    localStorage.setItem("userName", `${user}`);
-    location.href = "articles.html";
+  localStorage.setItem("userName", `${user}`);
+  location.href = "articles.html";
 }
 
 const user1_src = JSON.parse(localStorage.getItem('article1')).src1;

@@ -31,6 +31,7 @@ function profileLoad() {
                 <p>${profileElement.content}</p>
             </div>`;
                 profile.append(profileCard);
+                document.title = profileElement.title;
             }
         } catch (error) { }
     }
@@ -103,10 +104,30 @@ function cardLoad() {
                 </div>
             </div>
         </div>`;
-                
+
                 container.append(card);
                 container.append(modal);
             }
+        } catch (error) { }
+    }
+}
+
+function deleteArticle() {
+    const values = [];
+    for (const key in localStorage) {
+        values.push(localStorage.getItem(key));
+    }
+
+    for (const value of values) {
+        try {
+            const articleElement = JSON.parse(value);
+            const articleID = localStorage.getItem('articleID');
+            // 해당 작성자의 내용만 뜨도록 설정
+            if (articleElement && articleElement.num == articleID) {
+                localStorage.removeItem(`article${articleID}`);
+                location.reload();
+            }
+
         } catch (error) { }
     }
 }
@@ -134,25 +155,3 @@ $(function () {
         }
     })
 })
-
-function deleteArticle() {
-    const values = [];
-    for (const key in localStorage) {
-        values.push(localStorage.getItem(key));
-    }
-
-    for (const value of values) {
-        try {
-            const articleElement = JSON.parse(value);
-            const articleID = localStorage.getItem('articleID');
-            // 해당 작성자의 내용만 뜨도록 설정
-            if (articleElement && articleElement.num == articleID) {
-                localStorage.removeItem(`article${articleID}`);
-                location.reload();
-            }
-
-        } catch (error) { }
-    }
-}
-
-

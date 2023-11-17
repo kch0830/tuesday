@@ -1,0 +1,35 @@
+footer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    /* bottom: 0; */
+    transform: translateY(0%);
+}
+
+.footer-container {
+    width: 90vw;
+    height: 45px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 15px 30px 0 30px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.footer-right {
+    display: flex;
+    position: relative;
+}
+
+.footer-right p {
+    margin-left: 10px;
+    line-height: 15px;
+}
+
+.dark-mode .footer-container {
+    color: white;
+    border-color: white;
+}

@@ -58,7 +58,7 @@
 
 # 화면 구성
 
-<img src = "public/login.png">
+<img src = "./public/login.png">
 로그인 화면
 
 - 저장된 ID와 PW를 이용하여 로그인 가능

@@ -3,28 +3,29 @@ document.addEventListener('DOMContentLoaded', function () {
   const inputImgs = document.querySelectorAll('.img');
 
   inputImgs.forEach((inputImg) => {
-    inputImg.addEventListener('input', inputHandler);
+    inputImg.addEventListener("input", inputHandler);
   });
 
   function inputHandler(e) {
     const file = e.target.files[0];
     const reader = new FileReader();
-    const pictureBoard = e.target.closest('.pictureBoard');
-    const img = pictureBoard.querySelector('img');
+    const pictureBoard = e.target.closest(".pictureBoard");
+    const img = pictureBoard.querySelector("img");
 
     // 이미지 업로드
     reader.readAsDataURL(file);
 
     reader.onload = function () {
-      img.setAttribute('src', this.result);
+      img.setAttribute("src", this.result);
+      console.log(this); // this는 FileReader, resutl는 FileReader의 result로 이미지 url
 
       // 삭제 버튼 생성
-      const btn = document.createElement('button');
+      const btn = document.createElement("button");
       pictureBoard.appendChild(btn);
 
       // 이미지 삭제하기
-      btn.addEventListener('click', function () {
-        img.removeAttribute('src');
+      btn.addEventListener("click", function () {
+        img.removeAttribute("src");
         pictureBoard.removeChild(btn);
       });
     };
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // 날짜 찍기
 const date = new Date();
-const day = document.querySelector('.day');
+const day = document.querySelector(".day");
 
 let year = date.getFullYear();
 let month = date.getMonth() + 1;
@@ -41,7 +42,7 @@ let days = date.getDate();
 
 // '년-월-일' 형식으로 표시합니다.
 if (days < 10) {
-  days = '0' + days;
+  days = "0" + days;
 }
 const formattedDate = `${year}-${month}-${days}`;
 
@@ -106,5 +107,5 @@ publish.addEventListener('click', function () {
   //console.log(articleArray);
   let test = JSON.stringify(thisArticle);
   localStorage.setItem(`article${Date.now()}`, test);
-  location.href = 'articles.html';
+  location.href = "articles.html";
 });

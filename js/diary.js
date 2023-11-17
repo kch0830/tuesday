@@ -97,7 +97,7 @@ publish.addEventListener('click', function () {
     src2: secondImgValue,
     src3: thirdImgValue,
     src4: fourthImgValue,
-    num: Date.now(),
+    num: new Date().getTime(),
     day: formattedDate,
     weather: weatherValue,
   };

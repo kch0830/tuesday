@@ -19,13 +19,13 @@ function profileLoad() {
       if (profileElement && profileElement.user == userName) {
         const profileCard = document.createElement("div");
         profileCard.classList.add("row");
-        profileCard.innerHTML = `<div class="col-4 position-relative">
+        profileCard.innerHTML = `<div class="col-3 position-relative">
                 <div class="position-absolute top-50 start-50 translate-middle">
                     <img src="${profileElement.src}"
-                        alt="profile" style="height: 27vw;">
+                        alt="profile" style="height: 25vh;">
                 </div>
             </div>
-            <div class="col-8 p-3">
+            <div class="col-9 p-3">
                 <h5><strong>${profileElement.title}</strong></h5>
                 <br>
                 <p>${profileElement.content}</p>

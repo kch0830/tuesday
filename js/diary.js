@@ -94,7 +94,7 @@ publish.addEventListener('click', function () {
   // });
 
 
-  const weatherValue = weather[weather.selectedIndex].text;
+  // const weatherValue = weather[weather.selectedIndex].text;
   //localStorage의 userName객체에서 loggedinUser를 가져와서 author라는 변수에 할당
   const author = localStorage.getItem('loggedinUser');
 
@@ -129,7 +129,7 @@ publish.addEventListener('click', function () {
     src4: fourthImgValue,
     num: Date.now(),
     day: formattedDate,
-    weather: weatherValue,
+    // weather: weatherValue,
   };
 
   // articleArray.push(thisArticle);

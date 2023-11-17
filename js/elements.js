@@ -15,8 +15,7 @@ localStorage.setItem('profile2', JSON.stringify(profile2));
 localStorage.setItem('profile3', JSON.stringify(profile3));
 localStorage.setItem('profile4', JSON.stringify(profile4));
 
-
-localStorage.setItem('key1', JSON.stringify(ele1));
-localStorage.setItem('key2', JSON.stringify(ele2));
-localStorage.setItem('key3', JSON.stringify(ele3));
-localStorage.setItem('key4', JSON.stringify(ele4));
+localStorage.setItem('article1', JSON.stringify(ele1));
+localStorage.setItem('article2', JSON.stringify(ele2));
+localStorage.setItem('article3', JSON.stringify(ele3));
+localStorage.setItem('article4', JSON.stringify(ele4));

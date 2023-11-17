@@ -1,0 +1,110 @@
+@font-face {
+    font-family: "intelone-mono-font-family-regular";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "S-CoreDream-3Light";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+article {
+    min-height: calc(100vh - 105px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.login_wrapper {
+    position: relative;
+    /* min-height: 75vh; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    width: 80%;
+    /* Adjusted width for responsiveness */
+    max-width: 500px;
+    /* top: 50%;
+    left: 50%;
+    transform: translateX(-50%); */
+    /* Centering using translate */
+}
+
+.login_logo {
+    margin-top: 30px;
+    font-size: 30px;
+    font-family: "intelone-mono-font-family-regular";
+    font-weight: 400;
+}
+
+.login_form {
+    display: flex;
+    width: 100%;
+    /* Full width for responsiveness */
+    flex-direction: column;
+    align-items: center;
+    font-family: "S-CoreDream-3Light";
+}
+
+.login_text {
+    width: 100%;
+    height: 40px;
+    margin: 3px 0 3px 0;
+    padding: 0 10px 0 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.login_text::placeholder {
+    color: gray;
+}
+
+.login_btn {
+    width: 100%;
+    height: 40px;
+    margin: 60px;
+    /* Adjusted margin for better spacing */
+    font-size: 16px;
+    font-weight: 1000;
+    border-radius: 5px;
+    background-color: #1ec996ab;
+    border: none;
+    transition-duration: 0.4s;
+    color: white;
+}
+
+.login_btn:hover {
+    cursor: pointer;
+    /* background-color: #04aa6d; Green */
+    background-color: white;
+    border: 2px solid #1ec996ab;
+    color: #1ec996ab;
+}
+
+.login_bottom {
+    font-size: 20px;
+}
+
+header .btn-logIn {
+    display: none;
+}
+
+.dark-mode .login_wrapper .login_form #LOGIN_BTN {
+    background-color: #1ec996ab;
+    color: white;
+}

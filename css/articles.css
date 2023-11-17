@@ -190,7 +190,7 @@ body {
     }
 }
 
-.read_btn {
+.card button {
     margin-top: 10px;
     width: 100px;
     height: 35px;
@@ -200,19 +200,10 @@ body {
     color: white;
 }
 
-.close_btn {
+.modal button {
     width: 60px;
     height: 35px;
-    border-radius: 10%;
-    background-color: #1ec996ab;
-    border: none;
-    color: white;
-}
-
-.delete_btn {
-    width: 60px;
-    height: 35px;
-    border-radius: 10%;
+    border-radius: 10px;
     background-color: #1ec996ab;
     border: none;
     color: white;

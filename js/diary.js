@@ -99,7 +99,7 @@ publish.addEventListener('click', function () {
     src4: fourthImgValue,
     num: Date.now(),
     day: formattedDate,
-    weather: weatherValue,
+    // weather: weatherValue,
   };
 
   // articleArray.push(thisArticle);

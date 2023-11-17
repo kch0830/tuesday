@@ -29,8 +29,11 @@ function welcomeLoggedin() {
 function onBlog(user) {
     localStorage.setItem("userName", `${user}`);
     location.href = "articles.html";
-    
 }
 
+const user1_src = JSON.parse(localStorage.getItem('article1')).src1;
+const user2_src = JSON.parse(localStorage.getItem('article2')).src1;
+const user3_src = JSON.parse(localStorage.getItem('article3')).src1;
+const user4_src = JSON.parse(localStorage.getItem('article4')).src1;
 
 

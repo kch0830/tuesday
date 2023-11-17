@@ -108,3 +108,9 @@ header .btn-logIn {
     background-color: #1ec996ab;
     color: white;
 }
+
+@media screen and (max-width: 576px) {
+    .swal2-title {
+        font-size: 1.4rem;
+    }
+}

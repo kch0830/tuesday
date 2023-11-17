@@ -16,13 +16,11 @@
 
 // netlify 주소
 
-# 목차(선택)
-
 # 프로젝트 소개
 
 - app.end는 하루를 기록하는 컨셉의 블로그입니다.
 
-- appe.end는 다음과 같은 기능을 지원하고 있습니다.
+- app.end는 다음과 같은 기능을 지원하고 있습니다.
   1. 하루를 나타내는 사진 네 장을 첨부하고 그 날의 날씨와 기분 및 있었던 일을 기록할 수 있습니다.
   2. 메인페이지에서 보여지는 이미지를 통해 다른 사람의 블로그를 구경할 수 있습니다.
 
@@ -44,10 +42,6 @@
 
 <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white"> <img src="https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
 
-# 화면 구성
-
-// 화면 이미지 첨부
-
 # 주요 기능
 
 - 다크모드와 라이트 모드 기능
@@ -59,7 +53,51 @@
   - 사진 4장 및 오늘 날씨와 함께 하루에 대한 기록을 작성할 수 있다.
 
 - 글 삭제 기능
+
   - 유저가 자신이 작성한 글 목록에서 글을 삭제할 수 있다.
+
+# 화면 구성
+
+<img src = "public/login.png">
+로그인 화면
+
+- 저장된 ID와 PW를 이용하여 로그인 가능
+- 클릭 뿐 아니라 enter 키를 통해 로그인 가능
+- ID나 PW를 입력하지 않거나 잘못된 정보로 로그인하면 경고창 표시
+- 로그인에 성공하면 ID를 localStorage에 저장하여 로그아웃시 까지 유지
+- 로그인에 성공하면 header에 새 글 작성, 나의 블로그, 로그아웃 버튼 표시
+
+<br>
+
+<img src = "public/mainPage.png">
+메인 페이지 화면
+
+- 상단에 블로그의 대표 사진이 자동 전시
+- 밑의 slider-bar를 이용하여 이동 가능
+- 사진을 클릭하면 해당 블로그로 이동
+
+<br>
+
+<img src = "public/articles.png">
+<img src = "public/modal.png">
+블로그 글 목록 화면
+
+- localStorage에 저장된 프로필 중 해당 유저와 일치하는 프로필 표시
+- localStorage에 저장된 글 목록 중 해당 유저가 작성한 글들만 선택하여 표시
+- 제목과 내용, 대표 사진, 작성일과 날씨를 카드 형태로 표시
+- Read More 버튼을 클릭하면 모달 형태로 글을 표시
+- 로그인한 사용자가 블로그 작성자와 일치할 때 삭제 버튼을 표시하고, 게시글 삭제 가능
+
+<br>
+
+<img src = "public/diary.png">
+새 글 작성 화면
+
+- 각각의 이미지를 업로드하여 미리보기로 볼 수 있고, 삭제도 가능
+- 사진 네 장과 제목, 내용, 날씨를 작성하여 작성일, 작성자와 함께 localStorage에 저장
+- 하나라도 작성하지 않으면 경고창 표시
+
+
 
 <!-- 
 # 구현 (방법)

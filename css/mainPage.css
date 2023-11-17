@@ -1,97 +1,106 @@
 @font-face {
-    font-family: "intelone-mono-font-family-regular";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-regular.woff2")
-      format("woff2");
-    font-weight: 400;
-    font-style: normal;
-  }
+  font-family: "intelone-mono-font-family-regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
 
-  body {
-    margin: 0;
-  }
+body {
+  margin: 0;
+}
 
-  main {
-    min-height: calc(100vh - 105px);
-  }
+main {
+  min-height: calc(100vh - 105px);
+}
 
-  main .showBlogs {
-    padding:0;
-    height: 80vh;
-  }
-  main .showBlogs .slider-for {
-    height: 65%;
-    margin: 0 0 7vh 0;
-  }
-  main .showBlogs .slider-for .slick-list {
-    width: 100%;
-    height: 100%;
-  }
-  main .showBlogs .slider-for .slick-list .slick-track {
-    width: 100%;
-    height: 100%;
-  }
-  main .showBlogs .slider-for .slick-list .slick-track div {
-    width: 100%;
-    height: 100%;
-  }
+main .showBlogs {
+  padding: 0;
+  height: 80vh;
+}
 
-  main .showBlogs .slider-nav {
-    width: 100%;
-    height: 35%;
-    padding: 0vw 15vw;
-  }
-  main .showBlogs .slider-nav .nav-container {
-    display: flex;
-    height: 40%;
-    padding: 0;
-  }
-  main .showBlogs .slider-nav .nav-container button {
-    border: 0;
-    outline: 0;
-    background-color: inherit;
-    font-size: 20px;
-  }
-  main .showBlogs .slider-nav .nav-container .slick-list {
-    width: 100%;
-    height: 100%;
-    margin-bottom: 50px;
-  }
-  main .showBlogs .slider-nav .nav-container .slick-list .slick-track {
-    height: 100%;
-  }
-  main .showBlogs .slider-nav .nav-container .slick-list .slick-slide {
-    height: 100%;
-    margin: 0 10px;
-  }
-  main .showBlogs .slider-nav .slick-dots {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-  }
+main .showBlogs .slider-for {
+  height: 65%;
+  margin: 0 0 7vh 0;
+}
 
-  main .showBlogs .slider-nav .slick-dots li button {
-    margin: 3vh 1vh;
-    background-color: rgba(1, 1, 1, 0.2);
-    border: 0;
-    outline: none;
-    width: 4px;
-    height: 4px;
-    border-radius: 2px;
-  }
+main .showBlogs .slider-for .slick-list {
+  width: 100%;
+  height: 100%;
+}
 
-  @media screen and (max-width: 768px) {
-    main .showBlogs .slider-nav .nav-container {
-      display: none;
-    }
-  }
+main .showBlogs .slider-for .slick-list .slick-track {
+  width: 100%;
+  height: 100%;
+}
 
-  @media screen and (max-height: 500px) {
-    main .showBlogs .slider-nav .nav-container {
-      display: none;
-    }
-  }
+main .showBlogs .slider-for .slick-list .slick-track div {
+  width: 100%;
+  height: 100%;
+}
+
+main .showBlogs .slider-nav {
+  width: 100%;
+  height: 35%;
+  padding: 0vw 15vw;
+}
+
+main .showBlogs .slider-nav .nav-container {
+  display: flex;
+  height: 40%;
+  padding: 0;
+}
+
+main .showBlogs .slider-nav .nav-container button {
+  border: 0;
+  outline: 0;
+  background-color: inherit;
+  font-size: 20px;
+}
+
+main .showBlogs .slider-nav .nav-container .slick-list {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 50px;
+}
+
+main .showBlogs .slider-nav .nav-container .slick-list .slick-track {
+  height: 100%;
+}
+
+main .showBlogs .slider-nav .nav-container .slick-list .slick-slide {
+  height: 100%;
+  margin: 0 10px;
+}
+
+main .showBlogs .slider-nav .slick-dots {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+main .showBlogs .slider-nav .slick-dots li button {
+  margin: 3vh 1vh;
+  background-color: rgba(1, 1, 1, 0.2);
+  border: 0;
+  outline: none;
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+}
 
 .slider-for:hover {
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  main .showBlogs .slider-nav .nav-container {
+    display: none;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  main .showBlogs .slider-nav .nav-container {
+    display: none;
+  }
 }

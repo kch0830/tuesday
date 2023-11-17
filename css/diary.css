@@ -17,17 +17,6 @@ li {
   margin-left: 0;
 }
 
-/* 공통 버튼 스타일 */
-/* .btn {
-  width: 112px;
-  height: 40px;
-  border-radius: 8px;
-  cursor: pointer;
-  line-height: 40px;
-  text-align: center;
-  font-family: 'S-CoreDream-3Light';
-} */
-
 /* 콘텐츠 */
 #contents {
   margin: 0 auto;
@@ -200,8 +189,6 @@ li {
   background-color: #fff;
   border: 1px solid transparent;
   border-radius: 3px;
-  /* transition: border-color 200ms ease-in, padding 200ms ease-in,
-    max-height 200ms ease-in, box-shadow 200ms ease-in; */
   text-align: center;
   padding-left: 0;
 }

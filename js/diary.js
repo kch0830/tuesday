@@ -1,3 +1,11 @@
+function weatherAlert() {
+  Swal.fire("날씨를 입력해주세요!");
+  $(".swal2-confirm").attr(
+    "style",
+    "background-color: #1ec996ab; border: none;"
+  );
+}
+
 // 업로드 클릭 시 이미지 로드
 document.addEventListener('DOMContentLoaded', function () {
   const inputImgs = document.querySelectorAll('.img');
@@ -86,25 +94,27 @@ publish.addEventListener('click', function () {
   const contentValue = content.value;
   const weatherValue = weatherDropToggle.textContent;
 
-  //localStorage의 userName객체에서 loggedinUser를 가져와서 author라는 변수에 할당
-  const author = localStorage.getItem('loggedinUser');
+  if (weatherValue == '오늘 날씨') {
+    weatherAlert();
+  } else {
+    //localStorage의 userName객체에서 loggedinUser를 가져와서 author라는 변수에 할당
+    const author = localStorage.getItem('loggedinUser');
 
-  const thisArticle = {
-    title: titleValue,
-    content: contentValue,
-    author: author,
-    src1: firstImgValue,
-    src2: secondImgValue,
-    src3: thirdImgValue,
-    src4: fourthImgValue,
-    num: Date.now(),
-    day: formattedDate,
-    weather: weatherValue,
-  };
+    const thisArticle = {
+      title: titleValue,
+      content: contentValue,
+      author: author,
+      src1: firstImgValue,
+      src2: secondImgValue,
+      src3: thirdImgValue,
+      src4: fourthImgValue,
+      num: Date.now(),
+      day: formattedDate,
+      weather: weatherValue,
+    };
 
-  // articleArray.push(thisArticle);
-  //console.log(articleArray);
-  let test = JSON.stringify(thisArticle);
-  localStorage.setItem(`article${Date.now()}`, test);
-  location.href = "articles.html";
+    let test = JSON.stringify(thisArticle);
+    localStorage.setItem(`article${Date.now()}`, test);
+    location.href = "articles.html";
+  }
 });

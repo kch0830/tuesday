@@ -1,33 +1,33 @@
 // 버튼 클릭 시 이미지 로드
 
-document.addEventListener('DOMContentLoaded', function () {
-  const inputImgs = document.querySelectorAll('.img');
+document.addEventListener("DOMContentLoaded", function () {
+  const inputImgs = document.querySelectorAll(".img");
 
   inputImgs.forEach((inputImg) => {
-    inputImg.addEventListener('input', inputHandler);
+    inputImg.addEventListener("input", inputHandler);
   });
 
   function inputHandler(e) {
     console.log(e);
     const file = e.target.files[0];
     const reader = new FileReader();
-    const pictureBoard = e.target.closest('.pictureBoard');
-    const img = pictureBoard.querySelector('img');
+    const pictureBoard = e.target.closest(".pictureBoard");
+    const img = pictureBoard.querySelector("img");
 
     // 이미지 업로드
     reader.readAsDataURL(file);
 
     reader.onload = function () {
-      img.setAttribute('src', this.result);
+      img.setAttribute("src", this.result);
       console.log(this); // this는 FileReader, resutl는 FileReader의 result로 이미지 url
 
       // 삭제 버튼 생성
-      const btn = document.createElement('button');
+      const btn = document.createElement("button");
       pictureBoard.appendChild(btn);
 
       // 이미지 삭제하기
-      btn.addEventListener('click', function () {
-        img.removeAttribute('src');
+      btn.addEventListener("click", function () {
+        img.removeAttribute("src");
         pictureBoard.removeChild(btn);
       });
     };
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // 날짜 찍기
 const date = new Date();
-const day = document.querySelector('.day');
+const day = document.querySelector(".day");
 
 let year = date.getFullYear();
 let month = date.getMonth() + 1;
@@ -44,19 +44,19 @@ let days = date.getDate();
 
 // '년-월-일' 형식으로 표시합니다.
 if (days < 10) {
-  days = '0' + days;
+  days = "0" + days;
 }
 const formattedDate = `${year}-${month}-${days}`;
 // DOM 요소에 할당합니다.
 day.textContent = formattedDate;
 
 // 발행하기 버튼 누르면 로컬 스토리지에 저장
-const publish = document.querySelector('.publish');
-publish.addEventListener('click', function () {
-  const title = document.querySelector('.title');
-  const Img = document.querySelectorAll('img');
-  const content = document.querySelector('textarea');
-  const weather = document.querySelector('select');
+const publish = document.querySelector(".publish");
+publish.addEventListener("click", function () {
+  const title = document.querySelector(".title");
+  const Img = document.querySelectorAll("img");
+  const content = document.querySelector("textarea");
+  const weather = document.querySelector("select");
   console.log(Img);
 
   const titleValue = title.value;
@@ -67,23 +67,23 @@ publish.addEventListener('click', function () {
   const contentValue = content.value;
 
   // 날씨 드롭다운
-  const weatherTxt = document.querySelector('.weatherTxt');
-  const dropIcons = document.querySelectorAll('.dropIcons');
+  const weatherTxt = document.querySelector(".weatherTxt");
+  const dropIcons = document.querySelectorAll(".dropIcons");
 
   const handleWeather = (item) => {
-    weatherTxt.parentNode.classList.remove('active');
+    weatherTxt.parentNode.classList.remove("active");
     weatherTxt.innerHTML = item.textContent;
   };
 
   dropIcons.forEach((icon) => {
-    icon.addEventListener('click', () => handleWeather(icon));
+    icon.addEventListener("click", () => handleWeather(icon));
   });
 
-  weatherTxt.addEventListener('click', () => {
-    if (weatherTxt.parentNode.classList.contains('active')) {
-      weatherTxt.parentNode.classList.remove('active');
+  weatherTxt.addEventListener("click", () => {
+    if (weatherTxt.parentNode.classList.contains("active")) {
+      weatherTxt.parentNode.classList.remove("active");
     } else {
-      weatherTxt.parentNode.classList.add('active');
+      weatherTxt.parentNode.classList.add("active");
     }
   });
 
@@ -93,11 +93,9 @@ publish.addEventListener('click', function () {
   //   parent.classList.remove('active');
   // });
 
-
   const weatherValue = weather[weather.selectedIndex].text;
   //localStorage의 userName객체에서 loggedinUser를 가져와서 author라는 변수에 할당
-  const author = localStorage.getItem('loggedinUser');
-
+  const author = localStorage.getItem("loggedinUser");
 
   //articleElement
   // const article = localStorage.getItem('articleElement');
@@ -136,7 +134,7 @@ publish.addEventListener('click', function () {
   //console.log(articleArray);
   let test = JSON.stringify(thisArticle);
   localStorage.setItem(`article${Date.now()}`, test);
-  location.href = 'articles.html'
+  location.href = "articles.html";
 });
 
 // 임시저장 클릭 > 로컬로 데이터 저장

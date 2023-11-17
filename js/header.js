@@ -1,7 +1,7 @@
 //   로그인 상태가 맞는지 로컬 스토리지에서 확인하기
-let isLogin = localStorage.getItem("loginSuccess");
+const isLogin = localStorage.getItem("loginSuccess");
 //   유저 아이디 로컬 스토리지에서 가져오기
-let userId = localStorage.getItem("ID가 들어있는 변수명");
+const userId = localStorage.getItem("ID가 들어있는 변수명");
 
 const listBtn = document.querySelector(".btn-list");
 const headerBtn = document.querySelector(".headerRight");
@@ -13,7 +13,7 @@ listBtn.addEventListener("click", () => {
 $(document).ready(function () {
   //   로그인 했는지 확인하고 로그인 상태이면 함수 호출
   if (isLogin == "true") loggedIn();
-  let darkMode = localStorage.getItem("darkMode");
+  const darkMode = localStorage.getItem("darkMode");
 
   // darkMode가 저장되어 있다면 설정을 반영
   if (darkMode === "dark") {
@@ -23,17 +23,17 @@ $(document).ready(function () {
       "style",
       "background-color: white"
     );
-    let btn = document.querySelector("#color-mode");
+    const btn = document.querySelector("#color-mode");
     btn.innerHTML = `<i class="bi bi-moon-fill"></i>`;
   }
 });
 
 // 다크 모드 토글 함수
 function changeColor() {
-  let body = document.body;
+  const body = document.body;
   body.classList.toggle("dark-mode");
 
-  let btn = document.getElementById("color-mode");
+  const btn = document.getElementById("color-mode");
 
   if (body.classList.contains("dark-mode")) {
     // dark-mode가 활성화된 경우 로컬 스토리지에 저장

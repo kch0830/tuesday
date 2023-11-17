@@ -75,7 +75,6 @@ publish.addEventListener('click', function () {
   const title = document.querySelector('.title');
   const Img = document.querySelectorAll('img');
   const content = document.querySelector('textarea');
-  const weather = document.querySelector('ul');
   console.log(Img);
 
   const titleValue = title.value;
@@ -99,7 +98,7 @@ publish.addEventListener('click', function () {
     src4: fourthImgValue,
     num: Date.now(),
     day: formattedDate,
-    // weather: weatherValue,
+    weather: weatherValue,
   };
 
   // articleArray.push(thisArticle);

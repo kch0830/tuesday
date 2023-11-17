@@ -31,7 +31,8 @@ function profileLoad() {
                 <p>${profileElement.content}</p>
             </div>`;
                 profile.append(profileCard);
-            }
+                document.title = profileElement.title;
+            }            
         } catch (error) { }
     }
 }

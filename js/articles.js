@@ -1,25 +1,25 @@
 function gotoMain() {
-    location.href = 'mainPage.html';
+  location.href = "mainPage.html";
 }
 
 function profileLoad() {
-    const userName = localStorage.getItem('userName');
-    const profile = $('#profile');
+  const userName = localStorage.getItem("userName");
+  const profile = $("#profile");
 
-    const values = [];
-    for (const key in localStorage) {
-        values.push(localStorage.getItem(key));
-    }
+  const values = [];
+  for (const key in localStorage) {
+    values.push(localStorage.getItem(key));
+  }
 
-    // 반복문을 통해 values 배열 내 각 value에 접근
-    for (const value of values) {
-        try {
-            const profileElement = JSON.parse(value);
-            // 해당 작성자의 내용만 뜨도록 설정
-            if (profileElement && profileElement.user == userName) {
-                const profileCard = document.createElement('div');
-                profileCard.classList.add('row');
-                profileCard.innerHTML = `<div class="col-4 position-relative">
+  // 반복문을 통해 values 배열 내 각 value에 접근
+  for (const value of values) {
+    try {
+      const profileElement = JSON.parse(value);
+      // 해당 작성자의 내용만 뜨도록 설정
+      if (profileElement && profileElement.user == userName) {
+        const profileCard = document.createElement("div");
+        profileCard.classList.add("row");
+        profileCard.innerHTML = `<div class="col-4 position-relative">
                 <div class="position-absolute top-50 start-50 translate-middle">
                     <img src="${profileElement.src}"
                         alt="profile" style="height: 27vw;">
@@ -30,32 +30,35 @@ function profileLoad() {
                 <br>
                 <p>${profileElement.content}</p>
             </div>`;
-                profile.append(profileCard);
-                document.title = profileElement.title;
-            }
-        } catch (error) { }
-    }
+        profile.append(profileCard);
+        document.title = profileElement.title;
+      }
+    } catch (error) {}
+  }
 }
 
 function cardLoad() {
-    const userName = localStorage.getItem('userName');
-    const container = $('#container');
+  const userName = localStorage.getItem("userName");
+  const container = $("#container");
 
-    const values = [];
-    for (const key in localStorage) {
-        values.push(localStorage.getItem(key));
-    }
+  const values = [];
+  for (const key in localStorage) {
+    values.push(localStorage.getItem(key));
+  }
 
-    // 반복문을 통해 values 배열 내 각 value에 접근
-    for (const value of values) {
-        try {
-            const articleElement = JSON.parse(value);
-            // 해당 작성자의 내용만 뜨도록 설정
-            if (articleElement && articleElement.author == userName) {
-                const card = document.createElement('div');
-                card.classList.add('card');
-                card.setAttribute('style', 'background-color: inherit; color: inherit; border: none');
-                card.innerHTML = `<img src="${articleElement.src1}" class="card-img-top thumbnail" alt="1">
+  // 반복문을 통해 values 배열 내 각 value에 접근
+  for (const value of values) {
+    try {
+      const articleElement = JSON.parse(value);
+      // 해당 작성자의 내용만 뜨도록 설정
+      if (articleElement && articleElement.author == userName) {
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.setAttribute(
+          "style",
+          "background-color: inherit; color: inherit; border: none"
+        );
+        card.innerHTML = `<img src="${articleElement.src1}" class="card-img-top thumbnail" alt="1">
     <div class="card-body">
         <div class="d-flex justify-content-between">
             <h5 class="card-title">${articleElement.title}</h5>
@@ -66,15 +69,18 @@ function cardLoad() {
         </div>
     </div>`;
 
-                // value 값에 맞는 내용을 볼 수 있는 modal 추가
-                const modal = document.createElement('div');
-                modal.setAttribute('class', 'modal fade');
-                modal.setAttribute('id', `modal${articleElement.num}`);
-                modal.setAttribute('tabindex', '-1');
-                modal.setAttribute('aria-labelledby', `exampleModallabel${articleElement.num}`);
-                modal.setAttribute('aria-hidden', 'true');
-                modal.setAttribute('style', 'color: inherit');
-                modal.innerHTML = `<div class="modal-dialog modal-xl">
+        // value 값에 맞는 내용을 볼 수 있는 modal 추가
+        const modal = document.createElement("div");
+        modal.setAttribute("class", "modal fade");
+        modal.setAttribute("id", `modal${articleElement.num}`);
+        modal.setAttribute("tabindex", "-1");
+        modal.setAttribute(
+          "aria-labelledby",
+          `exampleModallabel${articleElement.num}`
+        );
+        modal.setAttribute("aria-hidden", "true");
+        modal.setAttribute("style", "color: inherit");
+        modal.innerHTML = `<div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-between">
                     <h5 class="modal-title" id="exampleModalLabel${articleElement.num}">${articleElement.title}</h5>
@@ -105,53 +111,54 @@ function cardLoad() {
             </div>
         </div>`;
 
-                container.append(card);
-                container.append(modal);
-            }
-        } catch (error) { }
-    }
+        container.append(card);
+        container.append(modal);
+      }
+    } catch (error) {}
+  }
 }
 
 function deleteArticle() {
-    const values = [];
-    for (const key in localStorage) {
-        values.push(localStorage.getItem(key));
-    }
+  const values = [];
+  for (const key in localStorage) {
+    values.push(localStorage.getItem(key));
+  }
 
-    for (const value of values) {
-        try {
-            const articleElement = JSON.parse(value);
-            const articleID = localStorage.getItem('articleID');
-            // 해당 작성자의 내용만 뜨도록 설정
-            if (articleElement && articleElement.num == articleID) {
-                localStorage.removeItem(`article${articleID}`);
-                location.reload();
-            }
-
-        } catch (error) { }
-    }
+  for (const value of values) {
+    try {
+      const articleElement = JSON.parse(value);
+      const articleID = localStorage.getItem("articleID");
+      // 해당 작성자의 내용만 뜨도록 설정
+      if (articleElement && articleElement.num == articleID) {
+        localStorage.removeItem(`article${articleID}`);
+        location.reload();
+      }
+    } catch (error) {}
+  }
 }
 
 $(function () {
-    $(document).ready(function () {
-        const width = $(window).width();
-        if (width <= 300) {
-            $('.read-more').addClass('btn-sm');
-        } else {
-            $('.read-more').removeClass('btn-sm');
-        }
-        if (localStorage.getItem('userName') != localStorage.getItem('loggedinUser')) {
-            $('.delete_btn').attr('style', 'display: none;');
-            console.log('1')
-        }
-    })
+  $(document).ready(function () {
+    const width = $(window).width();
+    if (width <= 300) {
+      $(".read-more").addClass("btn-sm");
+    } else {
+      $(".read-more").removeClass("btn-sm");
+    }
+    if (
+      localStorage.getItem("userName") != localStorage.getItem("loggedinUser")
+    ) {
+      $(".delete_btn").attr("style", "display: none;");
+      console.log("1");
+    }
+  });
 
-    $(window).resize(function () {
-        const width = $(window).width();
-        if (width <= 300) {
-            $('.read-more').addClass('btn-sm');
-        } else {
-            $('.read-more').removeClass('btn-sm');
-        }
-    })
-})
+  $(window).resize(function () {
+    const width = $(window).width();
+    if (width <= 300) {
+      $(".read-more").addClass("btn-sm");
+    } else {
+      $(".read-more").removeClass("btn-sm");
+    }
+  });
+});

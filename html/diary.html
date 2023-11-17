@@ -77,13 +77,12 @@
         <div class="dayWeatherBox">
           <div class="day"></div>
           <div class="weather">
-            <button class="weatherTxt">날씨</button>
-            <i class="we fa-solid fa-chevron-down"></i>
+            <button class="weatherDropToggle">오늘 날씨</button>
             <ul class="dropList">
-              <li class="dropIcons">☀️</li>
-              <li class="dropIcons">🌥️</li>
-              <li class="dropIcons">☔</li>
-              <li class="dropIcons">❄️</li>
+              <li class="dropIcons">☀️맑음</li>
+              <li class="dropIcons">🌥️흐림</li>
+              <li class="dropIcons">☔비</li>
+              <li class="dropIcons">❄️눈</li>
             </ul>
           </div>
         </div>
@@ -113,8 +112,8 @@
     <script src="/js/diary.js"></script>
     <script>
       $(function () {
-        $("#header").load("header.html");
-        $("#footer").load("footer.html");
+        $('#header').load('header.html');
+        $('#footer').load('footer.html');
       });
     </script>
   </body>

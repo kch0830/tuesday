@@ -31,10 +31,9 @@ function profileLoad() {
                 <p>${profileElement.content}</p>
             </div>`;
                 profile.append(profileCard);
-            }
-        } catch (error) {
-            console.log(error);
-        }
+                document.title = profileElement.title;
+            }            
+        } catch (error) { }
     }
 }
 
@@ -63,7 +62,7 @@ function cardLoad() {
             <div>${articleElement.day} ${articleElement.weather}</div>
         </div>
         <div class="d-flex justify-content-center">
-            <button type="button" class="read_btn" data-bs-toggle="modal" data-bs-target="#modal${articleElement.num}">Read More</button>
+            <button type="button" class="read_btn" data-bs-toggle="modal" data-bs-target="#modal${articleElement.num}" onclick="localStorage.setItem('articleID', ${articleElement.num})">Read More</button>
         </div>
     </div>`;
 
@@ -100,35 +99,61 @@ function cardLoad() {
                     ${articleElement.content}
                 </div>
                 <div class="modal-footer">
+                <button type="button" class="delete_btn" onclick="deleteArticle()">Delete</button>
                     <button type="button" class="close_btn" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>`;
+                
                 container.append(card);
                 container.append(modal);
             }
-        } catch (error) {
-            console.log(error);
-        }
+        } catch (error) { }
     }
 }
 
-$(function() {
-    $(document).ready(function() {
+$(function () {
+    $(document).ready(function () {
         const width = $(window).width();
-        if (width<=300) {
+        if (width <= 300) {
             $('.read-more').addClass('btn-sm');
         } else {
             $('.read-more').removeClass('btn-sm');
         }
+        if (localStorage.getItem('userName') != localStorage.getItem('loggedinUser')) {
+            $('.delete_btn').attr('style', 'display: none;');
+            console.log('1')
+        }
     })
 
-    $(window).resize(function() {
+    $(window).resize(function () {
         const width = $(window).width();
-        if (width<=300) {
+        if (width <= 300) {
             $('.read-more').addClass('btn-sm');
         } else {
             $('.read-more').removeClass('btn-sm');
         }
     })
 })
+
+function deleteArticle() {
+    const values = [];
+    for (const key in localStorage) {
+        values.push(localStorage.getItem(key));
+    }
+
+    for (const value of values) {
+        try {
+            const articleElement = JSON.parse(value);
+            const articleID = localStorage.getItem('articleID');
+            // 해당 작성자의 내용만 뜨도록 설정
+            if (articleElement && articleElement.num == articleID) {
+                localStorage.removeItem(`article${articleID}`);
+                location.reload();
+            }
+
+        } catch (error) { }
+    }
+}
+
+

@@ -11,20 +11,15 @@
   }
 
   main {
-    /* height:calc(100vh - 60px); */
     min-height: calc(100vh - 105px);
   }
 
   main .showBlogs {
     padding:0;
     height: 80vh;
-    /* remove */
-    /* border: 1px solid black; */
   }
   main .showBlogs .slider-for {
     height: 65%;
-    /* margin: 2vh 15vw; */
-    /* change */
     margin: 0 0 7vh 0;
   }
   main .showBlogs .slider-for .slick-list {
@@ -44,7 +39,6 @@
     width: 100%;
     height: 35%;
     padding: 0vw 15vw;
-    /* display: flex; */
   }
   main .showBlogs .slider-nav .nav-container {
     display: flex;
@@ -68,8 +62,6 @@
   main .showBlogs .slider-nav .nav-container .slick-list .slick-slide {
     height: 100%;
     margin: 0 10px;
-    /* remove */
-    border: 1px solid black;
   }
   main .showBlogs .slider-nav .slick-dots {
     display: flex;
@@ -92,62 +84,13 @@
     main .showBlogs .slider-nav .nav-container {
       display: none;
     }
-    /* change */
-    header .headerContainer {
-      padding: 7px 10px;
-      position: relative;
-    }    
-    header .headerContainer .btn-list {
-      display: block;
-      color: inherit;
-    }
-    header .headerContainer .headerRight {
-      display: none;
-      flex-direction: column;
-    }
-    header .headerContainer .headerRight.active {
-      display: flex;
-      position: absolute;
-      right: 0px;
-      top: 45px;
-      border-radius: 0 0 8px 8px;
-      z-index: 3;
-      width: auto;
-      height: auto;
-      padding: 10px 7px;
-      background-color: white;
-    }
-    header .headerContainer .headerRight.active button {
-      width: 100%;
-      font-size: 13px;
-      line-height: 22px;
-      border:1px solid rgba(0,0,0,0.2);
-      width: 75px;
-      padding: 1.5px;
-      margin-top: 7px;
-      /* background-color: green; */
-    }
-    header .headerContainer .headerRight.active div {
-      width: 100%;
-      text-align: center;
-      font-size: 12px;
-      padding: 7px 0 0 0;
-      color:black;
-      /* background-color: green; */
-    }
   }
+
   @media screen and (max-height: 500px) {
     main .showBlogs .slider-nav .nav-container {
       display: none;
     }
-    .headerContainer {
-      padding: 0;
-    }
   }
-
-.headerTitle:hover {
-  cursor: pointer;
-}
 
 .slider-for:hover {
   cursor: pointer;

@@ -47,7 +47,7 @@
           asNavFor: ".slider-nav",
           autoplay: true,
           autoplaySpeed: 2000,      // 다음 이미지로 넘어갈 시간
-          speed: 1000,              // 다음 이미지로 넘겨질 때 걸리는 시간
+          speed: 500,              // 다음 이미지로 넘겨질 때 걸리는 시간
           pauseOnHover: true,       // 마우스 호버시 슬라이드 이동 멈춤
         });
         $(".slider-nav").slick({
@@ -62,6 +62,7 @@
     </script>
 
     <script src="/js/mainPage.js"></script>
+    <script src="/js/elements.js"></script>
     <link rel="stylesheet" href="/css/mainPage.css" />
   </head>
 
@@ -72,16 +73,18 @@
         <div class="showBlogs">
             <!-- 큰 이미지 클릭하면 블로그로 연결될 수 있도록 링크 연결하기 -->
             <div class="slider-for border border-0">
-                <div onclick="onBlog('kch0830');"><img src="https://www.cleanlink.com/resources/editorial/2022/28297-house-sstock-1656739783.jpg" alt="" height="100%" width="100%" style="overflow: hidden; object-fit: cover; object-position: center center;"/></div>
-                <div onclick="onBlog('yewonkim301');" ><img src="https://r2.jjalbot.com/2023/03/Id2s6yosck.png" alt="" height="100%" width="100%" style="overflow: hidden; object-fit: cover; object-position: center center;"/></div>
-                <div onclick="onBlog('aiden2978');"><img src="http://kobis.or.kr/common/mast/movie/2022/12/thumb_x640/thn_2566c1d3c95545828d0cf42189181de3.jpg" alt=""  height="100%" width="100%" style="overflow: hidden; object-fit: cover; object-position: center center;"/></div>
-                <div onclick="onBlog('jihyehan91');"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlFbZ0qoHSr-CWywK-pIEg4Pth26WQnPsBgeMzC4Lo26gqfq3-lHH5wxZ7QBiqO0k9u9M&usqp=CAU" alt=""  height="100%" width="100%" style="overflow: hidden; object-fit: cover; object-position: center center;"/></div>
+                <div onclick="onBlog('kch0830');"><img class="user1" alt="" height="100%" width="100%" style="overflow: hidden; object-fit: cover; object-position: center center;"/></div>
+                <div onclick="onBlog('yewonkim301');" ><img class="user2" alt="" height="100%" width="100%" style="overflow: hidden; object-fit: cover; object-position: center center;"/></div>
+                <div onclick="onBlog('aiden2978');"><img
+                  class="user3" alt=""  height="100%" width="100%" style="overflow: hidden; object-fit: cover; object-position: center center;"/></div>
+                <div onclick="onBlog('jihyehan91');"><img
+                  class="user4" alt=""  height="100%" width="100%" style="overflow: hidden; object-fit: cover; object-position: center center;"/></div>
             </div>
             <div class="slider-nav">
-                <div class="border border-0"><img src="https://www.cleanlink.com/resources/editorial/2022/28297-house-sstock-1656739783.jpg" alt="" height="100%" width="100%" style="overflow: hidden; object-fit: cover; object-position: center center;"/></div>
-                <div class="border border-0"><img src="https://r2.jjalbot.com/2023/03/Id2s6yosck.png" alt="" height="100%" width="100%" style="overflow: hidden; object-fit: cover; object-position: center center;"/></div>
-                <div class="border border-0"><img src="http://kobis.or.kr/common/mast/movie/2022/12/thumb_x640/thn_2566c1d3c95545828d0cf42189181de3.jpg" alt="" height="100%" width="100%" style="overflow: hidden; object-fit: cover; object-position: center center;" /></div>
-                <div class="border border-0"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlFbZ0qoHSr-CWywK-pIEg4Pth26WQnPsBgeMzC4Lo26gqfq3-lHH5wxZ7QBiqO0k9u9M&usqp=CAU" alt="" height="100%" width="100%" style="overflow: hidden; object-fit: cover; object-position: center center;" /></div>
+                <div class="border border-0"><img class="user1" alt="" height="100%" width="100%" style="overflow: hidden; object-fit: cover; object-position: center center;"/></div>
+                <div class="border border-0"><img class="user2"  alt="" height="100%" width="100%" style="overflow: hidden; object-fit: cover; object-position: center center;"/></div>
+                <div class="border border-0"><img class="user3" alt="" height="100%" width="100%" style="overflow: hidden; object-fit: cover; object-position: center center;" /></div>
+                <div class="border border-0"><img class="user4" alt="" height="100%" width="100%" style="overflow: hidden; object-fit: cover; object-position: center center;" /></div>
             </div>
         </div>
       </div>
@@ -93,9 +96,12 @@
         $("#header").load("header.html");
         $("#footer").load("footer.html");
       });
-      // setTimeout(function() {
-      //     $.getScript('header.js')
-      //   }, 1000)
+      $(document).ready(function() {
+        $('.user1').attr('src', user1_src);
+        $('.user2').attr('src', user2_src);
+        $('.user3').attr('src', user3_src);
+        $('.user4').attr('src', user4_src);
+      })
     </script>
   </body>
 </html>

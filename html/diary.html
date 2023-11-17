@@ -7,7 +7,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
     />
-    <link rel="stylesheet" href="/diary.css" />
+    <link rel="stylesheet" href="/css/diary.css" />
     <link
       rel="shortcut icon"
       href="https://media.flaticon.com/dist/min/img/favicon.ico"
@@ -77,13 +77,12 @@
         <div class="dayWeatherBox">
           <div class="day"></div>
           <div class="weather">
-            <button class="weatherTxt">날씨</button>
-            <i class="we fa-solid fa-chevron-down"></i>
+            <button class="weatherDropToggle">오늘 날씨</button>
             <ul class="dropList">
-              <li class="dropIcons">☀️</li>
-              <li class="dropIcons">🌥️</li>
-              <li class="dropIcons">☔</li>
-              <li class="dropIcons">❄️</li>
+              <li class="dropIcons">☀️맑음</li>
+              <li class="dropIcons">🌥️흐림</li>
+              <li class="dropIcons">☔비</li>
+              <li class="dropIcons">❄️눈</li>
             </ul>
           </div>
         </div>
@@ -110,7 +109,7 @@
     </section>
     <!-- 푸터 -->
     <div id="footer"></div>
-    <script src="/diary.js"></script>
+    <script src="/js/diary.js"></script>
     <script>
       $(function () {
         $('#header').load('header.html');

@@ -12,7 +12,7 @@
 
 # 배포 주소
 
-// netlify 주소
+https://tuesday-append.netlify.app/index.html
 
 # 프로젝트 소개
 

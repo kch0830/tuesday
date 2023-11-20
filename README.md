@@ -55,7 +55,7 @@ https://tuesday-append.netlify.app/index.html
 
 # 화면 구성
 
-<img src = "./public/login.png">
+<p align="center"><img src = "public/login.PNG"></p>
 로그인 화면
 
 - 저장된 ID와 PW를 이용하여 로그인 가능
@@ -66,7 +66,7 @@ https://tuesday-append.netlify.app/index.html
 
 <br>
 
-<img src = "public/mainPage.png">
+<p align="center"><img src = "public/mainPage.PNG"></p>
 메인 페이지 화면
 
 - 상단에 블로그의 대표 사진이 자동 전시
@@ -75,8 +75,8 @@ https://tuesday-append.netlify.app/index.html
 
 <br>
 
-<img src = "public/articles.png">
-<img src = "public/modal.png">
+<p align="center"><img src = "public/articles.PNG"></p>
+<p align="center"><img src = "public/modal.PNG"></p>
 블로그 글 목록 화면
 
 - localStorage에 저장된 프로필 중 해당 유저와 일치하는 프로필 표시
@@ -87,7 +87,7 @@ https://tuesday-append.netlify.app/index.html
 
 <br>
 
-<img src = "public/diary.png">
+<p align="center"><img src = "public/diary.PNG"></p>
 새 글 작성 화면
 
 - 각각의 이미지를 업로드하여 미리보기로 볼 수 있고, 삭제도 가능
